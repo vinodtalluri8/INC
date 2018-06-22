@@ -1,0 +1,68 @@
+<div class="wrapper">
+  <!-- Sidebar Holder -->
+  <nav id="sidebar">
+
+    <ul class="list-unstyled components">
+
+      <li [routerLinkActive]="['active']">
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-2 iconmargin">
+            <img src="./assets/matrix.png">
+          </div>
+          <div class="col-sm-8 col-md-8 col-lg-8 labelMargin">
+            <a routerLink="/matrix">Matrix</a>
+          </div>
+        </div>
+
+
+      </li>
+      <li [routerLinkActive]="['active']">
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-2 iconmargin">
+            <img src="./assets/keyControl.png">
+          </div>
+          <div class="col-sm-8 col-md-8 col-lg-8 labelMargin">
+            <a routerLink="/keycontrols" routerLinkActiveOptions='{exact:false}'>Key Controls</a>
+          </div>
+        </div>
+
+      </li>
+      <li [routerLinkActive]="['active']">
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-2 iconmargin">
+            <img src="./assets/corePrograms.png">
+          </div>
+          <div class="col-sm-8 col-md-8 col-lg-8 labelMargin">
+            <a routerLink="/coreProgram">Core Programs</a>
+          </div>
+        </div>
+      </li>
+      <li [routerLinkActive]="['active']">
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-2 iconmargin">
+            <img src="./assets/audit.png">
+          </div>
+          <div class="col-sm-8 col-md-8 col-lg-8 labelMargin">
+            <a routerLink="/audit">Audit</a>
+          </div>
+        </div>
+      </li>
+      <li [routerLinkActive]="['active']">
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-2 iconmargin">
+            <img src="./assets/maintenance.png">
+          </div>
+          <div class="col-sm-8 col-md-8 col-lg-8 labelMargin">
+            <a routerLink="/maintainence">Maintenance</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+
+  <!-- Page Content Holder -->
+  <div id="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

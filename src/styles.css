@@ -1,0 +1,111 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: "DINOT", Helvetica, Arial, sans-serif;
+    color: #414141;
+    font-weight: normal;
+}
+
+#calender .ui-inputtext, #calender .ui-datepicker {
+    width: calc(100% - 2em);
+}
+
+#calender span.ui-calendar {
+    width: calc(100% - 2em);
+}
+
+.ui-inputtext {
+    padding-top: 6px!important;
+    padding-bottom: 8px!important;
+    padding-left: 5px!important;
+}
+
+.ui-dropdown {
+    display: none;
+    width: 100% !important;
+}
+
+.ui-multiselect .ui-multiselect-panel {
+    max-width: 100%;
+}
+
+.ui-widget-header {
+    border: none !important;
+    background: none !important;
+}
+
+.ui-multiselect-header .ui-multiselect-filter-container .fa {
+    margin-left: calc(100% - 0.12em) !important;
+    padding: 0.5em;
+}
+
+.ui-multiselect-header .ui-multiselect-close {
+    display: none !important;
+}
+
+.ui-multiselect-panel .ui-multiselect-item label {
+    vertical-align: auto !important;
+}
+
+.ui-multiselect .ui-multiselect-label {
+    color: grey !important;
+}
+
+.ui-button {
+    height: 40px;
+    min-width: 100px;
+}
+
+.ui-calendar .ui-calendar-button {
+    min-width: 10px !important;
+    border: 1px solid lightgray!important;
+    background-color: white!important;
+}
+
+.ui-button-icon-only .fa {
+    color: gray!important;
+}
+
+.button-action {
+    background-color: maroon !important;
+    border-color: maroon !important;
+    color: #ffffff
+}
+
+.button-outline {
+    background-color: white !important;
+    color: maroon !important;
+    border-color: maroon !important;
+}
+
+.button-cancel {
+    background-color: white !important;
+    color: #606d78 !important;
+    border-color: #606d78 !important;
+    font-weight: bold;
+}
+
+.ui-dropdown .ui-dropdown-trigger {
+    margin-right: 2px;
+}
+
+.ui-dropdown {
+    padding: 2px;
+}
+
+app-keycontrols .push-right .ui-button {
+    margin-top: -23%!important;
+    margin-left: 183%!important;
+    width: 84%!important;
+    height: auto!important;
+    position: absolute!important;
+    display: inline-block!important;
+}
+
+#calender .ui-datepicker.ui-widget .ui-datepicker-calendar td a {
+    padding: 0px;
+}
+
+#calender .ui-datepicker td span, .ui-datepicker td a {
+    padding: 0px;
+}
