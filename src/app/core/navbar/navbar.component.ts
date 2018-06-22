@@ -23,7 +23,23 @@ import {
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  navItems = [
+    {
+      displayName: 'Matrix'
+    },
+    {
+      displayName: 'Key Controls',
+    },
+     {
+      displayName: 'Core Programs',
+    },
+     {
+      displayName: 'Audit',
+    },
+     {
+      displayName: 'Maintainance',
+    }
+  ];
   ngOnInit() {
   }
 

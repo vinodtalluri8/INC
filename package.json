@@ -36,7 +36,8 @@
     "grunt-cli": "^1.2.0",
     "npm": "^5.8.0",
     "primeng": "^5.2.0-rc.1",
-    "rxjs": "^5.5.6",
+    "rxjs": "^5.6.0-forward-compat.5",
+    "rxjs-compat": "^6.2.1",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {

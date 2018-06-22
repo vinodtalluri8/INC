@@ -8,12 +8,14 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppRoutingModule } from '../app-routing.module';
+import { SharedModule } from '../shared';
 
 @NgModule({
   imports: [
     CommonModule,
     AngularFontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   declarations: [NavbarComponent],
   exports: [NavbarComponent]

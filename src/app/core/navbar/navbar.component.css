@@ -1,4 +1,7 @@
+/** This file is contains the css for the navigation bar **/
+
 p {
+
   font-size: 1.1em;
   font-weight: 300;
   line-height: 1.7em;
@@ -36,20 +39,20 @@ a, a:hover, a:focus {
 /* ---------------------------------------------------
   SIDEBAR STYLE
 ----------------------------------------------------- */
-
 .wrapper {
   display: flex;
   align-items: stretch;
   perspective: 1500px;
+  /*height: calc(100vh - 50px);*/
 }
 
 #sidebar {
-  min-width: 15em;
+  min-width: 15em; 
   background: #ebebeb;
   color: #444444 !important;
   transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
   transform-origin: bottom left;
-  margin-left: 0;
+  margin-left:0;
   /* font-weight: bold; */
 }
 
@@ -78,17 +81,18 @@ a, a:hover, a:focus {
   font-size: 1.1em;
   display: block;
 }
-
 #sidebar ul li div:hover {
   color: #ba0c2f;
   font-weight: bold;
+  
 }
 
-#sidebar ul li.active>div {
-  color: #ba0c2f;
+#sidebar ul li.active > div {
+  color:#ba0c2f;
   font-weight: bold;
   /*background: #6d7fcc;*/
 }
+
 
 a[data-toggle="collapse"] {
   position: relative;
@@ -102,10 +106,10 @@ a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
   font-family: 'Glyphicons Halflings';
   font-size: 0.6em;
 }
-
 a[aria-expanded="true"]::before {
   content: '\e260';
 }
+
 
 ul ul a {
   font-size: 0.9em !important;
@@ -135,16 +139,15 @@ a.article, a.article:hover {
   color: #fff !important;
 }
 
+
+
 /* ---------------------------------------------------
   CONTENT STYLE
 ----------------------------------------------------- */
-
 #content {
-  padding: 50px;
   min-height: 90vh;
   transition: all 0.3s;
-  width: 100%;
-  padding-top: 10px !important;
+  width:100%;
   position: relative;
 }
 
@@ -167,14 +170,13 @@ a.article, a.article:hover {
 #sidebarCollapse span:first-of-type {
   transform: rotate(45deg) translate(2px, 2px);
 }
-
 #sidebarCollapse span:nth-of-type(2) {
   opacity: 0;
 }
-
 #sidebarCollapse span:last-of-type {
   transform: rotate(-45deg) translate(1px, -1px);
 }
+
 
 #sidebarCollapse.active span {
   transform: none;
@@ -182,36 +184,39 @@ a.article, a.article:hover {
   margin: 5px auto;
 }
 
+
 /* ---------------------------------------------------
   MEDIAQUERIES
 ----------------------------------------------------- */
-
 @media (max-width: 768px) {
   #sidebar {
-    margin-left: -250px;
-    transform: rotateY(90deg);
+      margin-left: -250px;
+      transform: rotateY(90deg);
   }
   #sidebar.active {
-    margin-left: 0;
-    transform: none;
+      margin-left: 0;
+      transform: none;
   }
-  #sidebarCollapse span:first-of-type, #sidebarCollapse span:nth-of-type(2), #sidebarCollapse span:last-of-type {
-    transform: none;
-    opacity: 1;
-    margin: 5px auto;
+  #sidebarCollapse span:first-of-type,
+  #sidebarCollapse span:nth-of-type(2),
+  #sidebarCollapse span:last-of-type {
+      transform: none;
+      opacity: 1;
+      margin: 5px auto;
   }
   #sidebarCollapse.active span {
-    margin: 0 auto;
+      margin: 0 auto;
   }
   #sidebarCollapse.active span:first-of-type {
-    transform: rotate(45deg) translate(2px, 2px);
+      transform: rotate(45deg) translate(2px, 2px);
   }
   #sidebarCollapse.active span:nth-of-type(2) {
-    opacity: 0;
+      opacity: 0;
   }
   #sidebarCollapse.active span:last-of-type {
-    transform: rotate(-45deg) translate(1px, -1px);
+      transform: rotate(-45deg) translate(1px, -1px);
   }
+
 }
 
 .iconmargin {
@@ -223,4 +228,9 @@ a.article, a.article:hover {
 .labelMargin {
   margin-left: -11%;
   font-size: 14px;
+}
+
+.panelContainer {
+  padding-right: 50px;
+  padding-left: 30px !important;
 }

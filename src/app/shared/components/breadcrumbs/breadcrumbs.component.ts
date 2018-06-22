@@ -12,11 +12,13 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./breadcrumbs.component.css']
 })
 export class BreadcrumbsComponent implements OnInit {
-
   @Input() items: MenuItem[];
+   home;
   constructor() { }
 
   ngOnInit() {
+    this.home = {icon: 'fa fa-home'};
+
   }
 
 }

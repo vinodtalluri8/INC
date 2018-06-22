@@ -24,7 +24,10 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { ButtonCancelComponent } from './components/button-cancel/button-cancel.component';
 
 import { DialogModule } from 'primeng/dialog';
-
+import { NavbarTopmenuComponent } from './components/navbar-topmenu/navbar-topmenu.component';
+import { NavbarMenuItemsComponent } from './components/navbar-menu-items/navbar-menu-items.component';
+import { MatButtonModule, MatToolbarModule } from '@angular/material';
+import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
   imports: [
     CommonModule,
@@ -39,7 +42,7 @@ import { DialogModule } from 'primeng/dialog';
     ButtonModule,
     TooltipModule,
     BreadcrumbModule,
-    DialogModule
+    DialogModule, MatButtonModule, MatToolbarModule, MatMenuModule
   ],
   declarations: [
     HeaderComponent,
@@ -52,7 +55,9 @@ import { DialogModule } from 'primeng/dialog';
     ButtonComponent,
     TooltipComponent,
     BreadcrumbsComponent,
-    ButtonCancelComponent],
+    ButtonCancelComponent,
+     NavbarTopmenuComponent,
+     NavbarMenuItemsComponent],
   exports: [
     HeaderComponent,
     FooterComponent,
@@ -63,6 +68,6 @@ import { DialogModule } from 'primeng/dialog';
     ButtonComponent,
     CalenderComponent,
     TooltipComponent, BreadcrumbsComponent,
-    ButtonCancelComponent]
+    ButtonCancelComponent, NavbarTopmenuComponent, NavbarMenuItemsComponent]
 })
 export class SharedModule { }
