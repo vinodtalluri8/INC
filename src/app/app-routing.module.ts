@@ -10,7 +10,7 @@ import { ControlsModule } from './controls/controls.module';
 import { AddKeyControlsComponent } from './controls/keycontrols/add-key-controls/add-key-controls.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/keycontrols', pathMatch: 'full' },
+  { path: '', redirectTo: '/matrix', pathMatch: 'full' },
   { path: 'keycontrols', component: KeycontrolsComponent },
   { path: 'audit', component: AuditComponent },
   { path: 'matrix', component: MatrixComponent },

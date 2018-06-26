@@ -8,7 +8,6 @@ import { KeycontrolsComponent } from './keycontrols/keycontrols.component';
 import { AddKeyControlsComponent } from './keycontrols/add-key-controls/add-key-controls.component';
 import { EditKeyControlsComponent } from './keycontrols/edit-key-controls/edit-key-controls.component';
 import { AuditComponent } from './audit/audit.component';
-import { MatrixComponent } from './matrix/matrix.component';
 import { CoreProgramsComponent } from './core-programs/core-programs.component';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -36,7 +35,6 @@ import { MessageModule } from 'primeng/message';
     AddKeyControlsComponent,
     EditKeyControlsComponent,
     AuditComponent,
-    MatrixComponent,
     CoreProgramsComponent,
     MaintenanceComponent],
   providers: [
