@@ -8,12 +8,14 @@ import { MaintenanceComponent } from './controls/maintenance/maintenance.compone
 import { MatrixComponent } from './controls/matrix/matrix.component';
 import { ControlsModule } from './controls/controls.module';
 import { AddKeyControlsComponent } from './controls/keycontrols/add-key-controls/add-key-controls.component';
+import { GeneralMatrixInfoComponent } from './controls/matrix/general-matrix-info/general-matrix-info.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/matrix', pathMatch: 'full' },
   { path: 'keycontrols', component: KeycontrolsComponent },
   { path: 'audit', component: AuditComponent },
   { path: 'matrix', component: MatrixComponent },
+  { path: 'newmatrix', component: GeneralMatrixInfoComponent },
   { path: 'coreProgram', component: CoreProgramsComponent },
   { path: 'maintainence', component: MaintenanceComponent },
   { path: 'keycontrols/addKeyControl', component: AddKeyControlsComponent }

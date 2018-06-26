@@ -25,10 +25,16 @@ import {
 export class NavbarComponent implements OnInit {
   navItems = [
     {
-      displayName: 'Matrix'
+      displayName: 'Matrix',
+      children: [
+        {
+          displayName: 'New Matrix',
+          route: 'newmatrix'
+        }]
     },
     {
       displayName: 'Key Controls',
+      route:'keycontrols'
     },
      {
       displayName: 'Core Programs',
