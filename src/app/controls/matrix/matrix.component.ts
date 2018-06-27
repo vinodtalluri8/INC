@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatrixComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log('11');
+   }
 
   ngOnInit() {
   }

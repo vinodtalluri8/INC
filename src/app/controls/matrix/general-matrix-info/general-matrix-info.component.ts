@@ -14,7 +14,8 @@ export class GeneralMatrixInfoComponent implements OnInit {
     {name: 'London', code: 'LDN'},
     {name: 'Istanbul', code: 'IST'},
     {name: 'Paris', code: 'PRS'}
-]; }
+]; 
+console.log('18');}
 
   ngOnInit() {
   }
