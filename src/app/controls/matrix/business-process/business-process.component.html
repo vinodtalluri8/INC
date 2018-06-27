@@ -1,3 +1,36 @@
-<p>
-  business-process works!
-</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <div class="row">
+              <div class="col-9">
+                <!-- <div class="row">
+                  <div class="col-4"> -->
+                      <label for="title" class="required control-label">Business Process:</label>
+                  <!-- </div>
+                </div> -->
+                <!-- <div class="row"> -->
+                  <!-- <div class="col-9"> -->
+                      <input id="input" type="text" size="30" pInputText>                    
+                  <!-- </div> -->
+                <!-- </div> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-9">
+                <!-- <div class="row">
+                  <div class="col-4"> -->
+                      <label for="title" class="required control-label">Applicable to:</label>
+                  <!-- </div>
+                </div> -->
+                <!-- <div class="row">
+                  <div class="col-9"> -->
+                      <p-dropdown [options]="cities1"  placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+                                        <!-- </div> -->
+                <!-- </div> -->
+              </div>
+            </div>          
+          </div>
+    </div>
+    
+  </div>
+  
