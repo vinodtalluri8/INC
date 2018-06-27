@@ -16,9 +16,12 @@ const routes: Routes = [
   { path: 'audit', component: AuditComponent },
   { path: 'matrix', component: MatrixComponent },
   { path: 'newmatrix', component: GeneralMatrixInfoComponent },
+  { path: 'selectmatrix', component: MatrixComponent },
   { path: 'coreProgram', component: CoreProgramsComponent },
   { path: 'maintainence', component: MaintenanceComponent },
-  { path: 'keycontrols/addKeyControl', component: AddKeyControlsComponent }
+  { path: 'keycontrols/addKeyControl', component: AddKeyControlsComponent },
+  // { path: 'newmatrix', component: MatrixComponent}
+
 ];
 
 @NgModule({
