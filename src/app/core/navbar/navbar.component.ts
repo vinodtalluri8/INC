@@ -29,11 +29,7 @@ export class NavbarComponent implements OnInit {
       children: [
         {
           displayName: 'New Matrix',
-          route: 'newmatrix'
-        },
-        {
-          displayName: 'Select Matrix',
-          route: 'selectmatrix'
+          route: 'matrix'
         }]
     },
     {

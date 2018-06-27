@@ -10,13 +10,12 @@ export class MatrixTabComponent implements OnInit {
   constructor() { }
   ngOnInit() {
       this.items = [
-          {label: 'General Matrix Information', url: 'generalMatrixInformation'},
-          {label: 'Risk Assessment', url: 'riskAssessment'},
-          {label: 'Business Process', url: 'businessProcess'},
-          {label: 'Business Activity', url: 'businessActivity'},
-          {label: 'Control', url: 'control'},
-          {label: 'Control Evidence', url: 'controlEvidence'}
+          {label: 'General Matrix Information', routerLink: 'generalMatrixInformation'},
+          {label: 'Risk Assessment', routerLink: 'riskAssessment'},
+          {label: 'Business Process', routerLink: 'businessProcess'},
+          {label: 'Business Activity', routerLink: 'businessActivity'},
+          {label: 'Control', routerLink: 'control'},
+          {label: 'Control Evidence', routerLink: 'controlEvidence'}
       ];
   }
-
 }
