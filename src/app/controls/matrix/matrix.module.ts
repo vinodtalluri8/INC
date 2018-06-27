@@ -5,12 +5,13 @@ import { MatrixRoutingModule } from './matrix-routing.module';
 import { GeneralMatrixInfoComponent } from './general-matrix-info/general-matrix-info.component';
 import { MatrixComponent } from './matrix.component';
 import {DropdownModule} from 'primeng/dropdown';
-
+import {TabMenuModule} from 'primeng/tabmenu';
 @NgModule({
   imports: [
     CommonModule,
     MatrixRoutingModule,
-    DropdownModule
+    DropdownModule,
+    TabMenuModule
   ],
   declarations: [MatrixComponent, GeneralMatrixInfoComponent]
 })
