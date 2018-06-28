@@ -1,3 +1,4 @@
+import { SharedModule } from './../../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -17,7 +18,8 @@ import { BusinessProcessComponent } from './business-process/business-process.co
   imports: [
     CommonModule,
     DropdownModule,
-    TabMenuModule
+    TabMenuModule,
+    SharedModule
   ],
   declarations: [MatrixComponent,
      GeneralMatrixInfoComponent,

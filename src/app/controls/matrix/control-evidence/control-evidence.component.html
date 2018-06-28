@@ -1,3 +1,57 @@
-<p>
-  control-evidence works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <div class="row">
+        <div class="col-9">
+
+          <label for="title" class="required control-label">Source</label>
+
+          <p-dropdown [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-9">
+
+          <label for="title" class="required control-label">Enhancement Project</label>
+
+          <input id="input" type="text" size="30" pInputText>
+
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="col-9">
+
+          <label for="title" class="required control-label">Control Evidence</label>
+
+          <input id="input" type="text" size="30" pInputText>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-9">
+
+          <label for="title" class="required control-label">Tracking Number</label>
+
+          <p-dropdown [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="col-9">
+
+          <label for="title" class="required control-label">Implementation state</label>
+
+          <input id="input" type="text" size="30" pInputText>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row footerFixed">
+    <app-button label='Save' styleClass='button-action'></app-button>
+    <app-button label='Cancel'   styleClass='button-cancel'></app-button>
+  </div>
