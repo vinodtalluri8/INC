@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuItem} from 'primeng/api';
+import { MenuItem } from 'primeng/api';
 @Component({
   selector: 'app-matrix',
   templateUrl: './matrix.component.html',
@@ -7,7 +7,15 @@ import {MenuItem} from 'primeng/api';
 })
 export class MatrixComponent implements OnInit {
   items: MenuItem[];
+  itemsPath: MenuItem[];
+  home: MenuItem;
   constructor() {
+    this.home = { icon: 'fa fa-home' };
+    this.itemsPath = [
+      { label: 'Matrix'},
+      { label: 'New Matrix', routerLink: 'generalMatrixInformation'},
+      { label: 'General matrix information', routerLink: 'generalMatrixInformation'}];
+
     this.items = [
       {label: 'General Matrix Information', routerLink: 'generalMatrixInformation'},
       {label: 'Risk Assessment', routerLink: 'riskAssessment'},
