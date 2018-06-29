@@ -8,14 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class GeneralMatrixInfoComponent implements OnInit {
   cities1: { name: string; code: string; }[];
 
-  constructor() {     this.cities1 = [
+  constructor() {
+     this.cities1 = [
     {name: 'New York', code: 'NY'},
     {name: 'Rome', code: 'RM'},
     {name: 'London', code: 'LDN'},
     {name: 'Istanbul', code: 'IST'},
     {name: 'Paris', code: 'PRS'}
-]; 
-console.log('18');}
+];
+}
 
   ngOnInit() {
   }

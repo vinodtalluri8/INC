@@ -322,3 +322,7 @@ app-input input {
     bottom: 0;
     padding-left: 30px;
 }
+input {
+    padding: 6px;
+    width: 100%
+}
