@@ -326,3 +326,7 @@ input {
     padding: 6px;
     width: 100%
 }
+
+textarea{
+    width: 100%;
+}
