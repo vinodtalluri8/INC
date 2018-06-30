@@ -3,16 +3,10 @@
       <div class="col-4">
           <div class="row">
             <div class="col-12">
-              <!-- <div class="row">
-                <div class="col-4"> -->
                     <label for="title" class="required control-label">Driver Description:</label>
-                <!-- </div>
-              </div> -->
-              <!-- <div class="row"> -->
-                <!-- <div class="col-12"> -->
-                    <input id="input" type="text" size="30" pInputText>                    
-                <!-- </div> -->
-              <!-- </div> -->
+      
+                    <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
+                    
             </div>
           </div>
           <div class="row">
@@ -24,7 +18,8 @@
               </div> -->
               <!-- <div class="row">
                 <div class="col-12"> -->
-                    <p-dropdown [options]="cities1"  placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+                    <!--<p-dropdown [options]="cities1"  placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>-->
+                    <p-multiSelect [options]="cities1"></p-multiSelect>
                                       <!-- </div> -->
               <!-- </div> -->
             </div>

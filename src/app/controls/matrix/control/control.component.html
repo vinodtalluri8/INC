@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-12">
 
-          <label for="title" class="required control-label">Group</label>
+          <label for="title" class="control-label">Group</label>
 
           <p-dropdown [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
 
@@ -13,12 +13,12 @@
       <div class="row">
         <div class="col-12">
 
-          <label for="title" class="required control-label">Aditional Procedure</label>
+          <label for="title" class="control-label">Aditional Procedure</label>
         </div>
 
         <div class="col-12">
-          <input id="input" type="text" pInputText>
-
+          <!--<input id="input" type="text" pInputText>-->
+          <p-multiSelect [options]="cities1"></p-multiSelect>
         </div>
 
       </div>
@@ -36,7 +36,7 @@
        <div class="row">
         <div class="col-12">
 
-          <label for="title" class="required control-label">Group</label>
+          <label for="title" class="required control-label">Tracking Number</label>
 
           <p-dropdown [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
 
@@ -66,9 +66,7 @@
         <div class="col-12">
 
           <label for="title" class="required control-label">Comment</label>
-
-          <p-dropdown [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-
+          <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
         </div>
       </div>
     </div>
@@ -86,18 +84,17 @@
         <div class="col-12">
 
           <label for="title" class="required control-label">Elements</label>
-
-          <p-dropdown [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-
+          <p-multiSelect [options]="cities1"></p-multiSelect>
         </div>
       </div>
       <div class="row">
         <div class="col-12">
 
-          <label for="title" class="required control-label">Implementation State</label>
-
-          <p-dropdown [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-
+          <label for="title" class="control-label">Implementation State</label>
+          <div>
+            <p-radioButton name="group1" value="Option 1" label="Implemented"></p-radioButton>
+            <p-radioButton name="group1" value="Option 1" label="Will be Implemented"></p-radioButton>
+          </div>
         </div>
       </div>
     </div>
@@ -105,7 +102,7 @@
       <div class="row">
         <div class="col-12">
 
-          <label for="title" class="required control-label">Procedure</label>
+          <label for="title" class="control-label">Procedure</label>
 
           <p-dropdown [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
 
@@ -114,10 +111,8 @@
       <div class="row">
         <div class="col-12">
 
-          <label for="title" class="required control-label">Management Assertion</label>
-
-          <p-dropdown [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-
+          <label for="title" class="control-label">Management Assertion</label>
+          <p-multiSelect [options]="cities1"></p-multiSelect>
         </div>
       </div>
       <div class="row">

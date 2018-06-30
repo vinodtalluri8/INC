@@ -14,9 +14,8 @@
         <div class="col-12">
 
           <label for="title" class="required control-label">Enhancement Project</label>
-
-          <input id="input" type="text" size="30" pInputText>
-
+          <p-dropdown [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+          
         </div>
       </div>
     </div>
@@ -25,8 +24,7 @@
         <div class="col-12">
 
           <label for="title" class="required control-label">Control Evidence</label>
-
-          <input id="input" type="text" size="30" pInputText>
+          <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
         </div>
       </div>
       <div class="row">
@@ -43,9 +41,11 @@
       <div class="row">
         <div class="col-12">
 
-          <label for="title" class="required control-label">Implementation state</label>
-
-          <input id="input" type="text" size="30" pInputText>
+          <label for="title" class="control-label">Implementation state</label>
+          <div>
+            <p-radioButton name="group1" value="Option 1" label="Implemented"></p-radioButton>
+            <p-radioButton name="group1" value="Option 1" label="Will be Implemented"></p-radioButton>
+          </div>
 
         </div>
       </div>
