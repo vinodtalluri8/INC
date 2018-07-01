@@ -7,11 +7,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./business-process.component.css']
 })
 export class BusinessProcessComponent implements OnInit {
-  cities1:any = [];
+  mockDropDownData:any = [];
   businessProcessForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
-  this.cities1 = [
+  this.mockDropDownData = [
       {name: 'New York', code: 'NY'},
       {name: 'Rome', code: 'RM'},
       {name: 'London', code: 'LDN'},

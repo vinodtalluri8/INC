@@ -7,19 +7,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./business-activity.component.css']
 })
 export class BusinessActivityComponent implements OnInit {
-  cities1: { name: string; code: string; }[];
+  mockDropDownData: { name: string; code: string; }[];
   BusinessActivityForm: FormGroup;
-  cars;
+  mockMultiDropDownData;
 
   constructor(private fb: FormBuilder) {
-         this.cities1 = [
+         this.mockDropDownData = [
     {name: 'New York', code: 'NY'},
     {name: 'Rome', code: 'RM'},
     {name: 'London', code: 'LDN'},
     {name: 'Istanbul', code: 'IST'},
     {name: 'Paris', code: 'PRS'}
 ];
-  this.cars = [
+  this.mockMultiDropDownData = [
             {label: 'Audi', value: 'Audi'},
             {label: 'BMW', value: 'BMW'},
             {label: 'Fiat', value: 'Fiat'},

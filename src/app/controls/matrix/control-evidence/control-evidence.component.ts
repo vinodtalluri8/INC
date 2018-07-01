@@ -7,11 +7,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./control-evidence.component.css']
 })
 export class ControlEvidenceComponent implements OnInit {
-  cities1:any = [];
+  mockDropDownData:any = [];
   ControlEvidenceForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
-     this.cities1 = [
+     this.mockDropDownData = [
       {name: 'New York', code: 'NY'},
       {name: 'Rome', code: 'RM'},
       {name: 'London', code: 'LDN'},

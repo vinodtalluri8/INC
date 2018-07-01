@@ -7,7 +7,7 @@
 
           <label for="title" class="required control-label">Source</label>
 
-          <p-dropdown formControlName="source" [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+          <p-dropdown formControlName="source" [options]="mockDropDownData" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
 
         </div>
       </div>
@@ -15,31 +15,23 @@
         <div class="col-12">
 
           <label for="title" class="required control-label">Enhancement Project</label>
-          <p-dropdown formControlName="enhancementProject" [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+          <p-dropdown formControlName="enhancementProject" [options]="mockDropDownData" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
           
         </div>
       </div>
     </div>
     <div class="col">
-      <div class="row">
-        <div class="col-12">
 
-          <label for="title" class="required control-label">Control Evidence</label>
-          <textarea formControlName="controlEvidence" rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
-        </div>
-      </div>
       <div class="row">
         <div class="col-12">
 
           <label for="title" class="required control-label">Tracking Number</label>
 
-          <p-dropdown formControlName="trackingNumber" [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+          <p-dropdown formControlName="trackingNumber" [options]="mockDropDownData" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
 
         </div>
       </div>
-    </div>
-    <div class="col">
-      <div class="row">
+            <div class="row">
         <div class="col-12">
 
           <label for="title" class="control-label">Implementation state</label>
@@ -48,6 +40,16 @@
             <p-radioButton formControlName="implementationState" name="group1" value="Will be Implemented" label="Will be Implemented"></p-radioButton>
           </div>
 
+        </div>
+      </div>
+    </div>
+    <div class="col">
+
+            <div class="row">
+        <div class="col-12">
+
+          <label for="title" class="required control-label">Control Evidence</label>
+          <textarea formControlName="controlEvidence" rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
         </div>
       </div>
     </div>

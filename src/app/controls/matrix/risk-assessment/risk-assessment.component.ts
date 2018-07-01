@@ -7,12 +7,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./risk-assessment.component.css']
 })
 export class RiskAssessmentComponent implements OnInit {
-  cities1:any = [];
+  mockDropDownData:any = [];
   riskAssesmentForm: FormGroup;
-  cars;
+  mockMultiDropDownData;
 
   constructor(private fb: FormBuilder) { 
-    this.cities1 = [
+    this.mockDropDownData = [
       {name: 'New York', code: 'NY'},
       {name: 'Rome', code: 'RM'},
       {name: 'London', code: 'LDN'},
@@ -20,7 +20,7 @@ export class RiskAssessmentComponent implements OnInit {
       {name: 'Paris', code: 'PRS'}
   ]; 
 
-  this.cars = [
+  this.mockMultiDropDownData = [
             {label: 'Audi', value: 'Audi'},
             {label: 'BMW', value: 'BMW'},
             {label: 'Fiat', value: 'Fiat'},

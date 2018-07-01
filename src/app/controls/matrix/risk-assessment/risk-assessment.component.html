@@ -13,13 +13,13 @@
           <div class="row">
             <div class="col-12">
                     <label for="title" class="required control-label">Driver Category:</label>
-                    <p-multiSelect formControlName="driverCategory" [options]="cars"></p-multiSelect>
+                    <p-multiSelect formControlName="driverCategory" [options]="mockMultiDropDownData"></p-multiSelect>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
                 <label for="title" class="required control-label">Event Type:</label>
-                  <p-dropdown [options]="cities1" formControlName="eventType"  placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+                  <p-dropdown [options]="mockDropDownData" formControlName="eventType"  placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
             </div>
           </div>
         </div>
