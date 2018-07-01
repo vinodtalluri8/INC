@@ -50,13 +50,10 @@ this.createGeneralMatrixForm();
     });
   }
 
-  /* This method will reset all values to default */
-  resetAll() {
-
-  }
   onSubmit() {
-   console.log('Form data',this.generalMatrixForm);
+   console.log('Form data',this.generalMatrixForm.value);
   }
+
   resetForm(){
     this.generalMatrixForm.reset();
   }

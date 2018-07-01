@@ -1,4 +1,5 @@
 <div class="container-fluid">
+  <form [formGroup]="BusinessActivityForm" (ngSubmit)="onSubmit()">
   <div class="row">
     <div class="col">
       <div class="row">
@@ -6,7 +7,7 @@
 
           <label for="title" class="control-label">Title</label>
 
-          <input id="input" type="text" size="30" pInputText>
+          <input formControlName="title" id="input" type="text" size="30" pInputText>
 
         </div>
       </div>
@@ -15,8 +16,8 @@
 
           <label for="title" class="required control-label">Implementation state</label>
           <div>
-            <p-radioButton name="group1" value="Option 1" label="Implemented"></p-radioButton>
-            <p-radioButton name="group1" value="Option 1" label="Will be Implemented"></p-radioButton>
+            <p-radioButton formControlName="implementationState" name="group1" value="Implemented" label="Implemented"></p-radioButton>
+            <p-radioButton formControlName="implementationState" name="group1" value="Will be Implemented" label="Will be Implemented"></p-radioButton>
           </div>
         </div>
       </div>
@@ -26,7 +27,7 @@
         <div class="col-12">
 
           <label for="title" class="required control-label">Activity</label>
-          <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
+          <textarea formControlName="activity" rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
         </div>
       </div>
       <div class="row">
@@ -34,7 +35,7 @@
 
           <label for="title" class="required control-label">Enhancement Project</label>
 
-          <p-dropdown [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+          <p-dropdown formControlName="enhancementProject" [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
 
         </div>
       </div>
@@ -44,9 +45,7 @@
         <div class="col-12">
 
           <label for="title" class="control-label">Sub Activity</label>
-
-          <!--<input id="input" type="text" size="30" pInputText>-->
-          <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
+          <textarea formControlName="subActivity" rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
         </div>
       </div>
       <div class="row">
@@ -54,13 +53,16 @@
 
           <label for="title" class="required control-label">Tracking Number</label>
 
-          <p-dropdown [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+          <p-dropdown formControlName="trackingNumber" [options]="cities1" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
 
         </div>
       </div>
     </div>
   </div>
+  <button type="submit" [disabled]="!BusinessActivityForm.valid">Submit</button>
+  </form>
+</div>
   <div class="row footerFixed">
-    <app-button label='Save' styleClass='button-action'></app-button>
+    <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>
     <app-button label='Cancel'   styleClass='button-cancel'></app-button>
   </div>
