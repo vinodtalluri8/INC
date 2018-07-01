@@ -345,3 +345,13 @@ label.required:after {
     content: " *";
     color: red;
 }
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444444;
+    font-style: normal;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}

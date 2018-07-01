@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatrixService } from "../services/matrix.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-business-activity',
@@ -7,34 +9,28 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./business-activity.component.css']
 })
 export class BusinessActivityComponent implements OnInit {
-  mockDropDownData: { name: string; code: string; }[];
+  mockDropDownData;
   BusinessActivityForm: FormGroup;
   mockMultiDropDownData;
 
-  constructor(private fb: FormBuilder) {
-         this.mockDropDownData = [
-    {name: 'New York', code: 'NY'},
-    {name: 'Rome', code: 'RM'},
-    {name: 'London', code: 'LDN'},
-    {name: 'Istanbul', code: 'IST'},
-    {name: 'Paris', code: 'PRS'}
-];
-  this.mockMultiDropDownData = [
-            {label: 'Audi', value: 'Audi'},
-            {label: 'BMW', value: 'BMW'},
-            {label: 'Fiat', value: 'Fiat'},
-            {label: 'Ford', value: 'Ford'},
-            {label: 'Honda', value: 'Honda'},
-            {label: 'Jaguar', value: 'Jaguar'},
-            {label: 'Mercedes', value: 'Mercedes'},
-            {label: 'Renault', value: 'Renault'},
-            {label: 'VW', value: 'VW'},
-            {label: 'Volvo', value: 'Volvo'}
-        ];
+  constructor(private fb: FormBuilder, private matrixService: MatrixService, private router:Router) {
 this.createBusinessActivityForm();
    }
 
   ngOnInit() {
+    this.preloadData();
+  }
+  preloadData() {
+    this.matrixService.getMatrixData().subscribe(
+      (data) => {
+        this.mockDropDownData = data;
+      }
+    );
+    this.matrixService.getMatrixMultiSelect().subscribe(
+      (data) => {
+        this.mockMultiDropDownData = data;
+      }
+    );
   }
 
     createBusinessActivityForm() {
@@ -50,6 +46,7 @@ this.createBusinessActivityForm();
 
   onSubmit() {
    console.log('Form data',this.BusinessActivityForm.value);
+    this.router.navigate(['matrix/control']); 
   }
 
   resetForm(){

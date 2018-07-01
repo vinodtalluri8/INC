@@ -11,12 +11,13 @@
             <div class="row">
               <div class="col-12">
                       <label for="title" class="required control-label">Applicable to:</label>
-                      <p-dropdown formControlName="applicableTo" [options]="mockDropDownData"  placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+                      <p-dropdown formControlName="applicableTo" [options]="mockDropDownData"  placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
               </div>
             </div>          
           </div>
     </div>
-    <button type="submit" [disabled]="!businessProcessForm.valid">Submit</button>
+    <br>
+    <button pButton type="submit" [disabled]="!businessProcessForm.valid" label="Save and Enter Business Actiity"></button>
   </form>
   </div>
   <div class="row footerFixed">

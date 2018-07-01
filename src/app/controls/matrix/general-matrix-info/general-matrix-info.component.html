@@ -1,99 +1,107 @@
 <div class="container-fluid">
   <form [formGroup]="generalMatrixForm" (ngSubmit)="onSubmit()">
-  <div class="row">
-    <div class="col">
-      <div class="row">
-        <div class="col-12">
+    <div class="row">
+      <div class="col">
+        <div class="row">
+          <div class="col-12">
 
-          <label for="title" class="control-label">Group</label>
+            <label for="title" class="control-label">Group</label>
 
-          <p-dropdown formControlName="group" [options]="mockDropDownData" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
 
+            <p-dropdown formControlName="group" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false'
+              [showClear]="true"></p-dropdown>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
+        <div class="row">
+          <div class="col-12">
 
-          <label for="title" class="required control-label">Matrix Name</label>
-        </div>
+            <label for="title" class="required control-label">Matrix Name</label>
+          </div>
 
-        <div class="col-12">
-          <input id="input" formControlName="matrixName" type="text" pInputText>
+          <div class="col-12">
+            <input id="input" formControlName="matrixName" type="text" pInputText>
 
-        </div>
-
-      </div>
-      <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="required control-label">Process Overview</label>
-          <div>
-            <textarea rows="5" cols="30" formControlName="processOverview" pInputTextarea autoResize="autoResize"></textarea>
           </div>
 
         </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="row">
-        <div class="col-12">
+        <div class="row">
+          <div class="col-12">
 
-          <label for="title" class="required control-label">Business Function</label>
+            <label for="title" class="required control-label">Process Overview</label>
+            <div>
+              <textarea rows="5" cols="30" formControlName="processOverview" pInputTextarea autoResize="autoResize"></textarea>
+            </div>
 
-          <p-dropdown [options]="mockDropDownData" formControlName="businessFunction" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="required control-label">Certification Responsibility</label>
-          <div>
-            <p-multiSelect [options]="mockMultiDropDownData" formControlName="certificationResponsibility"></p-multiSelect>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
+      <div class="col">
+        <div class="row">
+          <div class="col-12">
 
-          <label for="title" class="control-label">Inherent Risk Rating</label>
+            <label for="title" class="required control-label">Business Function</label>
 
-          <p-dropdown [options]="mockDropDownData" formControlName="inherentRiskRating" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+            <p-dropdown [options]="mockDropDownData" formControlName="businessFunction" placeholder="Select option" optionLabel="name" filter='true'
+              autoWidth='false' [showClear]="true"></p-dropdown>
 
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <label for="title" class="required control-label">Certification Responsibility</label>
+            <div>
+              <p-multiSelect [options]="mockMultiDropDownData" formControlName="certificationResponsibility"></p-multiSelect>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+
+            <label for="title" class="control-label">Inherent Risk Rating</label>
+
+            <p-dropdown [options]="mockDropDownData" formControlName="inherentRiskRating" placeholder="Select option" optionLabel="name" filter='true'
+              autoWidth='false' [showClear]="true"></p-dropdown>
+
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col-12">
+
+            <label for="title" class="required control-label">Matrix Type</label>
+
+
+            <p-dropdown [options]="mockDropDownData" formControlName="matrixType" placeholder="Select option" optionLabel="name" filter='true'
+              autoWidth='false' [showClear]="true"></p-dropdown>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+
+            <label for="title" class="control-label">Related Systems</label>
+
+
+            <p-dropdown [options]="mockDropDownData" formControlName="relatedSystems" placeholder="Select option" optionLabel="name" filter='true'
+              autoWidth='false' [showClear]="true"></p-dropdown>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+
+            <label for="title" class="control-label">Control Risk Rating</label>
+
+
+            <p-dropdown [options]="mockDropDownData" formControlName="controlRiskRating" placeholder="Select option" optionLabel="name" filter='true'
+              autoWidth='false' [showClear]="true"></p-dropdown>
+
+          </div>
         </div>
       </div>
     </div>
-    <div class="col">
-      <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="required control-label">Matrix Type</label>
-
-          <p-dropdown [options]="mockDropDownData" formControlName="matrixType" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="control-label">Related Systems</label>
-
-          <p-dropdown [options]="mockDropDownData" formControlName="relatedSystems" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="control-label">Control Risk Rating</label>
-
-          <p-dropdown [options]="mockDropDownData" formControlName="controlRiskRating" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-
-        </div>
-      </div>
-    </div>
-  </div>
-  <button type="submit" [disabled]="!generalMatrixForm.valid">Submit</button>
+    <button pButton type="submit" [disabled]="!generalMatrixForm.valid" label="Save and Enter Risks"></button>
   </form>
 </div>
 <div class="row footerFixed">

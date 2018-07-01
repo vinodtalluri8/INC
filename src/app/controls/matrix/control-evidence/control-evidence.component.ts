@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatrixService } from "../services/matrix.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-control-evidence',
@@ -10,18 +12,19 @@ export class ControlEvidenceComponent implements OnInit {
   mockDropDownData:any = [];
   ControlEvidenceForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-     this.mockDropDownData = [
-      {name: 'New York', code: 'NY'},
-      {name: 'Rome', code: 'RM'},
-      {name: 'London', code: 'LDN'},
-      {name: 'Istanbul', code: 'IST'},
-      {name: 'Paris', code: 'PRS'}
-  ]; 
+  constructor(private fb: FormBuilder, private matrixService: MatrixService, private router:Router) {
   this.createControlEvidenceForm();
    }
 
   ngOnInit() {
+    this.preloadData();
+  }
+  preloadData() {
+    this.matrixService.getMatrixData().subscribe(
+      (data) => {
+        this.mockDropDownData = data;
+      }
+    );
   }
 
   createControlEvidenceForm() {
@@ -36,6 +39,7 @@ export class ControlEvidenceComponent implements OnInit {
 
   onSubmit() {
    console.log('Form data',this.ControlEvidenceForm.value);
+  //  this.router.navigate(['matrix/businessProcess']);
   }
 
   resetForm(){

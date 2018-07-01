@@ -7,7 +7,7 @@
 
           <label for="title" class="required control-label">Source</label>
 
-          <p-dropdown formControlName="source" [options]="mockDropDownData" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+          <p-dropdown formControlName="source" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
 
         </div>
       </div>
@@ -15,7 +15,7 @@
         <div class="col-12">
 
           <label for="title" class="required control-label">Enhancement Project</label>
-          <p-dropdown formControlName="enhancementProject" [options]="mockDropDownData" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+          <p-dropdown formControlName="enhancementProject" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
           
         </div>
       </div>
@@ -27,7 +27,7 @@
 
           <label for="title" class="required control-label">Tracking Number</label>
 
-          <p-dropdown formControlName="trackingNumber" [options]="mockDropDownData" placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+          <p-dropdown formControlName="trackingNumber" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
 
         </div>
       </div>
@@ -54,7 +54,9 @@
       </div>
     </div>
   </div>
-  <button type="submit" [disabled]="!ControlEvidenceForm.valid">Submit</button>
+  <!--<button type="submit" [disabled]="!ControlEvidenceForm.valid">Submit</button>-->
+  <button pButton type="submit" [disabled]="!ControlEvidenceForm.valid" label="Add more evidence to this Control"></button>
+  <button pButton type="submit" [disabled]="!ControlEvidenceForm.valid" label="Save and return to Matrix Grid"></button>
   </form>
 </div>
   <div class="row footerFixed">

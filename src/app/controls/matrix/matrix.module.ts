@@ -15,7 +15,9 @@ import { ControlEvidenceComponent } from './control-evidence/control-evidence.co
 import { BusinessProcessComponent } from './business-process/business-process.component';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import {ButtonModule} from 'primeng/button';
 import {  ReactiveFormsModule } from '@angular/forms';
+import { MatrixService } from './services/matrix.service';
 
 @NgModule({
   imports: [
@@ -25,12 +27,14 @@ import {  ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     MultiSelectModule,
     RadioButtonModule,
+    ButtonModule,
 ReactiveFormsModule
   ],
   declarations: [MatrixComponent,
      GeneralMatrixInfoComponent,
       MatrixTabComponent, RiskAssessmentComponent,
        BusinessActivityComponent, ControlComponent,
-        ControlEvidenceComponent, BusinessProcessComponent]
+        ControlEvidenceComponent, BusinessProcessComponent],
+  providers: [MatrixService]
 })
 export class MatrixModule { }

@@ -6,7 +6,7 @@
             <div class="col-12">
                     <label for="title" class="required control-label">Driver Description:</label>
       
-                    <textarea formControlName="driverDescription" rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
+                    <textarea formControlName="driverDescription" rows="4" cols="30" pInputTextarea autoResize="autoResize"></textarea>
                     
             </div>
           </div>
@@ -19,12 +19,15 @@
           <div class="row">
             <div class="col-12">
                 <label for="title" class="required control-label">Event Type:</label>
-                  <p-dropdown [options]="mockDropDownData" formControlName="eventType"  placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+                  <p-dropdown [options]="mockDropDownData" formControlName="eventType"  placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
             </div>
           </div>
         </div>
   </div>
-  <button type="submit" [disabled]="!riskAssesmentForm.valid">Submit</button>
+  <br>
+  <button pButton type="submit" [disabled]="!riskAssesmentForm.valid" label="Save and Enter Business Process"></button>
+  <button pButton type="submit" [disabled]="!riskAssesmentForm.valid" label="Save and Add Additional Risks"></button>
+  <button pButton type="submit" label="I have no risks to enter"></button>
   </form>
 </div>
 <div class="row footerFixed">
