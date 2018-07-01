@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-business-process',
@@ -6,10 +7,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./business-process.component.css']
 })
 export class BusinessProcessComponent implements OnInit {
+  cities1:any = [];
+  businessProcessForm: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {
+  this.cities1 = [
+      {name: 'New York', code: 'NY'},
+      {name: 'Rome', code: 'RM'},
+      {name: 'London', code: 'LDN'},
+      {name: 'Istanbul', code: 'IST'},
+      {name: 'Paris', code: 'PRS'}
+  ]; 
+  this.createbusinessProcessForm();
+   }
 
   ngOnInit() {
+  }
+
+  createbusinessProcessForm() {
+    this.businessProcessForm = this.fb.group({
+      businessProcess: ['', Validators.required ],
+      applicableTo: ['', Validators.required ]
+    });
+  }
+
+  onSubmit() {
+   console.log('Form data',this.businessProcessForm.value);
+  }
+
+  resetForm(){
+    this.businessProcessForm.reset();
   }
 
 }

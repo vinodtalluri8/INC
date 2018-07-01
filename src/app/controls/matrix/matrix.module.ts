@@ -13,13 +13,19 @@ import { BusinessActivityComponent } from './business-activity/business-activity
 import { ControlComponent } from './control/control.component';
 import { ControlEvidenceComponent } from './control-evidence/control-evidence.component';
 import { BusinessProcessComponent } from './business-process/business-process.component';
+import {MultiSelectModule} from 'primeng/multiselect';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import {  ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     DropdownModule,
     TabMenuModule,
-    SharedModule
+    SharedModule,
+    MultiSelectModule,
+    RadioButtonModule,
+ReactiveFormsModule
   ],
   declarations: [MatrixComponent,
      GeneralMatrixInfoComponent,

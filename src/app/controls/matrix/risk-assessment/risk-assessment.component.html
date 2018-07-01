@@ -1,49 +1,33 @@
 <div class="container-fluid">
+  <form [formGroup]="riskAssesmentForm" (ngSubmit)="onSubmit()">
   <div class="row">
       <div class="col-4">
           <div class="row">
             <div class="col-12">
-              <!-- <div class="row">
-                <div class="col-4"> -->
                     <label for="title" class="required control-label">Driver Description:</label>
-                <!-- </div>
-              </div> -->
-              <!-- <div class="row"> -->
-                <!-- <div class="col-12"> -->
-                    <input id="input" type="text" size="30" pInputText>                    
-                <!-- </div> -->
-              <!-- </div> -->
+      
+                    <textarea formControlName="driverDescription" rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
+                    
             </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <!-- <div class="row">
-                <div class="col-4"> -->
                     <label for="title" class="required control-label">Driver Category:</label>
-                <!-- </div>
-              </div> -->
-              <!-- <div class="row">
-                <div class="col-12"> -->
-                    <p-dropdown [options]="cities1"  placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-                                      <!-- </div> -->
-              <!-- </div> -->
+                    <p-multiSelect formControlName="driverCategory" [options]="cars"></p-multiSelect>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <!-- <div class="row"> -->
                 <label for="title" class="required control-label">Event Type:</label>
-              <!-- </div> -->
-              <!-- <div class="row"> -->
-                  <p-dropdown [options]="cities1"  placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-                  <!-- </div> -->
+                  <p-dropdown [options]="cities1" formControlName="eventType"  placeholder="Select a City" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
             </div>
           </div>
         </div>
   </div>
-  
+  <button type="submit" [disabled]="!riskAssesmentForm.valid">Submit</button>
+  </form>
 </div>
 <div class="row footerFixed">
-  <app-button label='Save' styleClass='button-action'></app-button>
+  <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>
   <app-button label='Cancel'   styleClass='button-cancel'></app-button>
 </div>

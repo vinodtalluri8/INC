@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-general-matrix-info',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneralMatrixInfoComponent implements OnInit {
   cities1: { name: string; code: string; }[];
+  generalMatrixForm: FormGroup;
+  cars;
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
      this.cities1 = [
     {name: 'New York', code: 'NY'},
     {name: 'Rome', code: 'RM'},
@@ -16,9 +19,42 @@ export class GeneralMatrixInfoComponent implements OnInit {
     {name: 'Istanbul', code: 'IST'},
     {name: 'Paris', code: 'PRS'}
 ];
+  this.cars = [
+            {label: 'Audi', value: 'Audi'},
+            {label: 'BMW', value: 'BMW'},
+            {label: 'Fiat', value: 'Fiat'},
+            {label: 'Ford', value: 'Ford'},
+            {label: 'Honda', value: 'Honda'},
+            {label: 'Jaguar', value: 'Jaguar'},
+            {label: 'Mercedes', value: 'Mercedes'},
+            {label: 'Renault', value: 'Renault'},
+            {label: 'VW', value: 'VW'},
+            {label: 'Volvo', value: 'Volvo'}
+        ];
+this.createGeneralMatrixForm();
 }
-
   ngOnInit() {
   }
 
+  createGeneralMatrixForm() {
+    this.generalMatrixForm = this.fb.group({
+      group: '',
+      matrixName: ['', Validators.required ],
+      processOverview: ['', Validators.required ],
+      businessFunction: ['', Validators.required ],
+      certificationResponsibility: ['', Validators.required ],
+      inherentRiskRating: '',
+      matrixType: ['', Validators.required ],
+      relatedSystems: '',
+      controlRiskRating: ''
+    });
+  }
+
+  onSubmit() {
+   console.log('Form data',this.generalMatrixForm.value);
+  }
+
+  resetForm(){
+    this.generalMatrixForm.reset();
+  }
 }
