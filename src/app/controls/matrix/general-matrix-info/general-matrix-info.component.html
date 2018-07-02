@@ -16,9 +16,9 @@
           <div class="col-12">
 
             <label for="title" class="required control-label">Matrix Name</label>
-          </div>
+          <!--</div>-->
 
-          <div class="col-12">
+          <!--<div class="col-12">-->
             <input id="input" formControlName="matrixName" type="text" pInputText>
 
           </div>
@@ -28,9 +28,9 @@
           <div class="col-12">
 
             <label for="title" class="required control-label">Process Overview</label>
-            <div>
+            <!--<div>-->
               <textarea rows="5" cols="30" formControlName="processOverview" pInputTextarea autoResize="autoResize"></textarea>
-            </div>
+            <!--</div>-->
 
           </div>
         </div>
@@ -49,9 +49,9 @@
         <div class="row">
           <div class="col-12">
             <label for="title" class="required control-label">Certification Responsibility</label>
-            <div>
+            <!--<div>-->
               <p-multiSelect [options]="mockMultiDropDownData" formControlName="certificationResponsibility"></p-multiSelect>
-            </div>
+            <!--</div>-->
           </div>
         </div>
         <div class="row">
@@ -101,10 +101,16 @@
         </div>
       </div>
     </div>
+    <div class="text-center">
     <button pButton type="submit" [disabled]="!generalMatrixForm.valid" label="Save and Enter Risks"></button>
+    </div>
   </form>
-</div>
+
 <div class="row footerFixed">
-  <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>
+  <div class="col">
+      <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>
   <app-button label='Cancel' styleClass='button-cancel'></app-button>
+  </div>
+
+</div>
 </div>

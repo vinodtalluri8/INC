@@ -25,12 +25,17 @@
         </div>
   </div>
   <br>
-  <button pButton type="submit" [disabled]="!riskAssesmentForm.valid" label="Save and Enter Business Process"></button>
+  <div class="text-center">
+    <button pButton type="submit" [disabled]="!riskAssesmentForm.valid" label="Save and Enter Business Process"></button>
   <button pButton type="submit" [disabled]="!riskAssesmentForm.valid" label="Save and Add Additional Risks"></button>
   <button pButton type="submit" label="I have no risks to enter"></button>
+  </div>
   </form>
-</div>
+
 <div class="row footerFixed">
-  <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>
+  <div class="col">
+      <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>
   <app-button label='Cancel'   styleClass='button-cancel'></app-button>
+  </div>
+</div>
 </div>

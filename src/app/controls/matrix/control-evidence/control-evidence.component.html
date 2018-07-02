@@ -54,12 +54,16 @@
       </div>
     </div>
   </div>
-  <!--<button type="submit" [disabled]="!ControlEvidenceForm.valid">Submit</button>-->
+    <div class="text-center">
   <button pButton type="submit" [disabled]="!ControlEvidenceForm.valid" label="Add more evidence to this Control"></button>
   <button pButton type="submit" [disabled]="!ControlEvidenceForm.valid" label="Save and return to Matrix Grid"></button>
+    </div>
   </form>
-</div>
+
   <div class="row footerFixed">
-    <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>
+    <div class="col">
+          <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>
     <app-button label='Cancel'   styleClass='button-cancel'></app-button>
+    </div>
+  </div>
   </div>

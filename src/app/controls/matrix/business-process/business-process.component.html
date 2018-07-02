@@ -17,10 +17,15 @@
           </div>
     </div>
     <br>
+      <div class="text-center">
     <button pButton type="submit" [disabled]="!businessProcessForm.valid" label="Save and Enter Business Actiity"></button>
+      </div>
   </form>
-  </div>
+  
   <div class="row footerFixed">
-    <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>
+    <div class="col">
+          <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>
     <app-button label='Cancel'   styleClass='button-cancel'></app-button>
+    </div>
+  </div>
   </div>
