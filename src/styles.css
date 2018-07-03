@@ -355,3 +355,7 @@ label {
     padding-top: 10px;
     padding-bottom: 5px;
 }
+
+.ui-multiselect-label{
+    width: 250px !important;
+}
