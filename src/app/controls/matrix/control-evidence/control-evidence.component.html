@@ -7,7 +7,7 @@
 
           <label for="title" class="required control-label">Source</label>
 
-          <p-dropdown formControlName="source" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+          <p-dropdown formControlName="source" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="false"></p-dropdown>
 
         </div>
       </div>
@@ -15,7 +15,7 @@
         <div class="col-12">
 
           <label for="title" class="required control-label">Enhancement Project</label>
-          <p-dropdown formControlName="enhancementProject" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+          <p-dropdown formControlName="enhancementProject" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="false"></p-dropdown>
           
         </div>
       </div>
@@ -27,7 +27,7 @@
 
           <label for="title" class="required control-label">Tracking Number</label>
 
-          <p-dropdown formControlName="trackingNumber" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+              <input formControlName="trackingNumber" id="input" type="text" pInputText>
 
         </div>
       </div>
@@ -62,7 +62,7 @@
 
   <div class="row footerFixed">
     <div class="col">
-          <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>
+          <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>&nbsp;&nbsp;&nbsp;
     <app-button label='Cancel'   styleClass='button-cancel'></app-button>
     </div>
   </div>

@@ -18,6 +18,7 @@ import {RadioButtonModule} from 'primeng/radiobutton';
 import {ButtonModule} from 'primeng/button';
 import {  ReactiveFormsModule } from '@angular/forms';
 import { MatrixService } from './services/matrix.service';
+import {CheckboxModule} from 'primeng/checkbox';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { MatrixService } from './services/matrix.service';
     MultiSelectModule,
     RadioButtonModule,
     ButtonModule,
-ReactiveFormsModule
+ReactiveFormsModule,
+CheckboxModule
   ],
   declarations: [MatrixComponent,
      GeneralMatrixInfoComponent,

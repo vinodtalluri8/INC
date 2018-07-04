@@ -1,151 +1,173 @@
-<div class="container-fluid">
+<div class="container-fluid" style="overflow:auto;height:auto;">
   <form [formGroup]="controlForm" (ngSubmit)="onSubmit()">
-  <div class="row">
-    <div class="col">
-      <div class="row">
-        <div class="col-12">
+    <div class="row">
+      <div class="col-12">
 
-          <label for="title" class="control-label">Group</label>
-
-          <p-dropdown formControlName="group" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-
-        </div>
+        <label for="title" class="control-label">Non Checklist Item:</label>
+        <p-checkbox name="group1" value="checked" label="" (click)="checkLisItem()" inputId="on"></p-checkbox>
       </div>
-      <div class="row">
-        <div class="col-12">
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="row" *ngIf="isCheckedChecklist">
+          <div class="col-12">
 
-          <label for="title" class="control-label">Aditional Procedure</label>
+            <label for="title" class="control-label">Control Text</label>
+
+            <textarea formControlName="controlText" rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
+
+          </div>
         </div>
+        <div class="row" *ngIf="!isCheckedChecklist">
+          <div class="col-12">
 
-        <div class="col-12">
-          <p-multiSelect formControlName="aditionalProcedure" [options]="mockMultiDropDownData"></p-multiSelect>
+            <label for="title" class="control-label">Group</label>
+
+            <p-dropdown formControlName="group" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true'
+              autoWidth='false' [showClear]="false"></p-dropdown>
+
+          </div>
         </div>
+        <div class="row">
+          <div class="col-12">
 
-      </div>
-      <div class="row">
-        <div class="col-12">
+            <label for="title" class="control-label">Aditional Procedure</label>
+          </div>
 
-          <label for="title" class="required control-label">Business Continuity</label>
-          <div>
-            <input formControlName="businessContinuity" id="input" type="text" pInputText>
-
+          <div class="col-12">
+            <p-multiSelect formControlName="aditionalProcedure" [options]="mockMultiDropDownData"></p-multiSelect>
           </div>
 
         </div>
-      </div>
-       <div class="row">
-        <div class="col-12">
+        <div class="row">
+          <div class="col-12">
 
-          <label for="title" class="required control-label">Tracking Number</label>
+            <label for="title" class="required control-label">Business Continuity</label>
+            <div>
+              <input formControlName="businessContinuity" id="input" type="text" pInputText>
 
-          <p-dropdown formControlName="trackingNumber" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+            </div>
 
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="row">
-        <div class="col-12">
+        <div class="row">
+          <div class="col-12">
 
-          <label for="title" class="required control-label">Checklist</label>
+            <label for="title" class="required control-label">Tracking Number</label>
+              <input formControlName="trackingNumber" id="input" type="text" pInputText>
 
-          <p-dropdown formControlName="checklist" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="required control-label">Framework</label>
-
-          <p-dropdown formControlName="framework" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-
-        </div>
-      </div>
-            <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="required control-label">Enhancement Project</label>
-
-          <p-dropdown formControlName="enhancementProject" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-
-        </div>
-      </div>
-            <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="control-label">Implementation State</label>
-          <div>
-            <p-radioButton formControlName="implementationState" name="group1" value="Implemented" label="Implemented"></p-radioButton>
-            <p-radioButton formControlName="implementationState" name="group1" value="Will be Implemented" label="Will be Implemented"></p-radioButton>
           </div>
         </div>
       </div>
+      <div class="col">
+        <div class="row" *ngIf="!isCheckedChecklist">
+          <div class="col-12">
 
+            <label for="title" class="required control-label">Checklist</label>
+
+            <p-dropdown formControlName="checklist" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true'
+              autoWidth='false' [showClear]="false"></p-dropdown>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+
+            <label for="title" class="required control-label">Framework</label>
+
+            <p-dropdown formControlName="framework" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true'
+              autoWidth='false' [showClear]="false"></p-dropdown>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+
+            <label for="title" class="required control-label">Enhancement Project</label>
+
+            <p-dropdown formControlName="enhancementProject" [options]="mockDropDownData" placeholder="Select option" optionLabel="name"
+              filter='true' autoWidth='false' [showClear]="false"></p-dropdown>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+
+            <label for="title" class="control-label">Implementation State</label>
+            <div>
+              <p-radioButton formControlName="implementationState" name="group1" value="Implemented" label="Implemented"></p-radioButton>
+              <p-radioButton formControlName="implementationState" name="group1" value="Will be Implemented" label="Will be Implemented"></p-radioButton>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col">
+        <div class="row" *ngIf="!isCheckedChecklist">
+          <div class="col-12">
+
+            <label for="title" class="required control-label">Control</label>
+
+            <p-dropdown formControlName="control" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true'
+              autoWidth='false' [showClear]="false"></p-dropdown>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+
+            <label for="title" class="required control-label">Elements</label>
+            <p-multiSelect formControlName="elements" [options]="mockMultiDropDownData"></p-multiSelect>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+
+            <label for="title" class="required control-label">Comment</label>
+            <textarea formControlName="comment" rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col-12">
+
+            <label for="title" class="control-label">Procedure</label>
+
+            <p-dropdown formControlName="procedure" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true'
+              autoWidth='false' [showClear]="false"></p-dropdown>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+
+            <label for="title" class="control-label">Management Assertion</label>
+            <p-multiSelect formControlName="managementAssertion" [options]="mockMultiDropDownData"></p-multiSelect>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+
+            <label for="title" class="required control-label">Enhancement Project</label>
+
+            <p-dropdown formControlName="enhancementProject" [options]="mockDropDownData" placeholder="Select option" optionLabel="name"
+              filter='true' autoWidth='false' [showClear]="false"></p-dropdown>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col">
-      <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="required control-label">Control</label>
-
-          <p-dropdown formControlName="control" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="required control-label">Elements</label>
-          <p-multiSelect formControlName="elements" [options]="mockMultiDropDownData"></p-multiSelect>
-        </div>
-      </div>
-
-            <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="required control-label">Comment</label>
-          <textarea formControlName="comment" rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="control-label">Procedure</label>
-
-          <p-dropdown formControlName="procedure" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="control-label">Management Assertion</label>
-          <p-multiSelect formControlName="managementAssertion" [options]="mockMultiDropDownData"></p-multiSelect>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="required control-label">Enhancement Project</label>
-
-          <p-dropdown formControlName="enhancementProject" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
-        </div>
-      </div>
-    </div>
-  </div>
     <div class="text-center">
-  <button pButton type="submit" [disabled]="!controlForm.valid" label="Save and Add evidence to this Control"></button>
+      <button pButton type="submit" [disabled]="!controlForm.valid" label="Save and Add evidence to this Control"></button>
     </div>
   </form>
-
+<br><br><br>
   <div class="row footerFixed">
     <div class="col">
-          <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>
-    <app-button label='Cancel'   styleClass='button-cancel'></app-button>
+      <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>&nbsp;&nbsp;&nbsp;
+      <app-button label='Cancel' styleClass='button-cancel'></app-button>
     </div>
   </div>
-  </div>
+</div>

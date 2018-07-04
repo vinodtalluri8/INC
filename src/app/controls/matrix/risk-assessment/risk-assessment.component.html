@@ -19,7 +19,7 @@
           <div class="row">
             <div class="col-12">
                 <label for="title" class="required control-label">Event Type:</label>
-                  <p-dropdown [options]="mockDropDownData" formControlName="eventType"  placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="true"></p-dropdown>
+                  <p-dropdown [options]="mockDropDownData" formControlName="eventType"  placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="false"></p-dropdown>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@
 
 <div class="row footerFixed">
   <div class="col">
-      <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>
+      <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>&nbsp;&nbsp;&nbsp;&nbsp;
   <app-button label='Cancel'   styleClass='button-cancel'></app-button>
   </div>
 </div>

@@ -12,12 +12,13 @@ export class ControlComponent implements OnInit {
   mockDropDownData;
   controlForm: FormGroup;
   mockMultiDropDownData;
+  isCheckedChecklist = false;
 
-  constructor(private fb: FormBuilder, private matrixService: MatrixService, private router:Router) {
-  this.createcontrolForm();
+  constructor(private fb: FormBuilder, private matrixService: MatrixService, private router: Router) {
+    this.createcontrolForm();
   }
 
-   ngOnInit() {
+  ngOnInit() {
     this.preloadData();
   }
   preloadData() {
@@ -33,31 +34,42 @@ export class ControlComponent implements OnInit {
     );
   }
 
-    createcontrolForm() {
-    this.controlForm = this.fb.group({
-      group: '',
-      aditionalProcedure: '',
-      businessContinuity: ['', Validators.required ],
-      trackingNumber: ['', Validators.required ],
-      checklist: ['', Validators.required ],
-      framework: ['', Validators.required ],
-      comment: ['', Validators.required ],
-      control: ['', Validators.required ],
-      elements: ['', Validators.required ],
-      implementationState: '',
-      procedure: '',
-      managementAssertion: '',
-      enhancementProject: ['', Validators.required ]
-    });
+  createcontrolForm() {
+      this.controlForm = this.fb.group({
+        group: '',
+        aditionalProcedure: '',
+        businessContinuity: ['', Validators.required],
+        trackingNumber: ['', Validators.required],
+        checklist: ['', Validators.required],
+        framework: ['', Validators.required],
+        comment: ['', Validators.required],
+        control: ['', Validators.required],
+        elements: ['', Validators.required],
+        implementationState: '',
+        procedure: '',
+        managementAssertion: '',
+        enhancementProject: ['', Validators.required]
+      });
   }
 
   onSubmit() {
-   console.log('Form data',this.controlForm.value);
-  this.router.navigate(['matrix/controlEvidence']); 
+    console.log('Form data', this.controlForm.value);
+    this.router.navigate(['matrix/controlEvidence']);
   }
 
-  resetForm(){
+  resetForm() {
     this.controlForm.reset();
   }
 
+  checkLisItem() {
+    if (this.isCheckedChecklist === false) {
+      console.log('this.isCheckedChecklist', this.isCheckedChecklist);
+      this.isCheckedChecklist = true;
+    }
+    else {
+      console.log('this.isCheckedChecklist', this.isCheckedChecklist);
+      this.isCheckedChecklist = false;
+    }
+    this.createcontrolForm();
+  }
 }
