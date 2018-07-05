@@ -11,7 +11,7 @@
 
         </div>
       </div>
-      <div class="row">
+      <div class="row" *ngIf="ImplementedCheck">
         <div class="col-12">
 
           <label for="title" class="required control-label">Enhancement Project</label>
@@ -22,7 +22,7 @@
     </div>
     <div class="col">
 
-      <div class="row">
+      <div class="row" *ngIf="ImplementedCheck">
         <div class="col-12">
 
           <label for="title" class="required control-label">Tracking Number</label>
@@ -36,8 +36,8 @@
 
           <label for="title" class="control-label">Implementation state</label>
           <div>
-            <p-radioButton formControlName="implementationState" name="group1" value="Implemented" label="Implemented"></p-radioButton>
-            <p-radioButton formControlName="implementationState" name="group1" value="Will be Implemented" label="Will be Implemented"></p-radioButton>
+            <p-radioButton #value1 formControlName="implementationState" (click)="ImplementationState(value1.value)" name="group1" value="Implemented" label="Implemented"></p-radioButton>
+            <p-radioButton #value2 formControlName="implementationState" (click)="ImplementationState(value2.value)" name="group1" value="Will be Implemented" label="Will be Implemented"></p-radioButton>
           </div>
 
         </div>

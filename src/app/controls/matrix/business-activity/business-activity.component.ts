@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { MatrixService } from "../services/matrix.service";
 import { Router } from "@angular/router";
 
@@ -12,6 +12,7 @@ export class BusinessActivityComponent implements OnInit {
   mockDropDownData;
   BusinessActivityForm: FormGroup;
   mockMultiDropDownData;
+  ImplementedCheck = false;
 
   constructor(private fb: FormBuilder, private matrixService: MatrixService, private router:Router) {
 this.createBusinessActivityForm();
@@ -51,6 +52,19 @@ this.createBusinessActivityForm();
 
   resetForm(){
     this.BusinessActivityForm.reset();
+  }
+
+  ImplementationState(value) {
+    console.log('implemented value..........', value);
+    if(value == "Implemented"){
+      this.ImplementedCheck = false;
+      this.BusinessActivityForm.removeControl('enhancementProject');
+      this.BusinessActivityForm.removeControl('trackingNumber');
+    }else if(value == "Will be Implemented"){
+      this.ImplementedCheck = true;
+      this.BusinessActivityForm.addControl('enhancementProject', new FormControl('', Validators.required));
+      this.BusinessActivityForm.addControl('trackingNumber', new FormControl('', Validators.required));
+    }
   }
 
 }
