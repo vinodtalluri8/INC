@@ -62,18 +62,7 @@
             <label for="title" class="control-label">Sub Activity</label>
             <textarea formControlName="subActivity" rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
           </div>
-        </div>
-
-        <div class="row" *ngIf="ImplementedCheck">
-          <div class="col-12">
-
-            <label for="title" class="required control-label">Tracking Number</label>
-
-            <p-dropdown formControlName="trackingNumber" [options]="mockDropDownData" placeholder="Select option" optionLabel="name"
-              filter='true' autoWidth='false' [showClear]="false"></p-dropdown>
-
-          </div>
-        </div>
+        </div>        
       </div>
     </div>
       <div class="text-center">

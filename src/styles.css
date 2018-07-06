@@ -193,6 +193,7 @@ label {
 }
  .ui-table .ui-sortable-column.ui-state-highlight {
     background-color: #b3b7bb!important;
+    background: #186ba0!important;
     color: #ffffff;
 } 
 .ui-table .ui-sortable-column .ui-sortable-column-icon {
@@ -355,3 +356,9 @@ label {
     padding-top: 10px;
     padding-bottom: 5px;
 }
+
+.ui-state-highlight {
+    background-color: #b3b7bb!important;
+    background:#FFFFFF!important;
+    color: #ffffff;
+} 

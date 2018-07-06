@@ -80,16 +80,6 @@
 
           </div>
         </div>
-        <div class="row" *ngIf="ImplementedCheck">
-          <div class="col-12">
-
-            <label for="title" class="required control-label">Enhancement Project</label>
-
-            <p-dropdown formControlName="enhancementProject" [options]="mockDropDownData" placeholder="Select option" optionLabel="name"
-              filter='true' autoWidth='false' [showClear]="false"></p-dropdown>
-
-          </div>
-        </div>
         <div class="row">
           <div class="col-12">
 
@@ -98,6 +88,16 @@
               <p-radioButton #value1 formControlName="implementationState" (click)="ImplementationState(value1.value)" name="group1" value="Implemented" label="Implemented"></p-radioButton>
               <p-radioButton #value2 formControlName="implementationState" (click)="ImplementationState(value2.value)" name="group1" value="Will be Implemented" label="Will be Implemented"></p-radioButton>
             </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="ImplementedCheck">
+          <div class="col-12">
+
+            <label for="title" class="required control-label">Enhancement Project</label>
+
+            <p-dropdown formControlName="enhancementProject" [options]="mockDropDownData" placeholder="Select option" optionLabel="name"
+              filter='true' autoWidth='false' [showClear]="false"></p-dropdown>
+
           </div>
         </div>
 
