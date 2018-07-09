@@ -188,7 +188,7 @@
   </div>
 </div>
   <div class="text-center">
-    <button pButton type="submit" (click)='saveControlForm()' label="Save and Add evidence to this Control"></button>
+    <button pButton type="submit" (click)='saveControlForm()' [disabled]='disable()' label="Save and Add evidence to this Control"></button>
   </div>
     <br><br><br><br>
 <div class="row addKeyControlButtons">

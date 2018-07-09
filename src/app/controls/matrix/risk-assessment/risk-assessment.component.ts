@@ -37,6 +37,15 @@ export class RiskAssessmentComponent implements OnInit {
       }
     );
   }
+
+    changeDriverCategory(event) {
+    if (event === 'none') {
+      this.selectedDriverCategory = [];
+    } else {
+      this.selectedDriverCategory = event;
+    }
+  }
+
   //   createriskAssesmentForm() {
   //   this.riskAssesmentForm = this.fb.group({
   //     driverDescription: ['', Validators.required ],

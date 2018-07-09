@@ -40,8 +40,8 @@
 </div>
 <br>
   <div class="text-center">
-    <app-button label='Save and Enter Business Process' (click)="saveriskAssessmentForm()" styleClass='button-action'></app-button>
-    <app-button label='Save and Add Additional Risks' (click)="saveriskAssessmentForm()" styleClass='button-action'></app-button>
+    <app-button label='Save and Enter Business Process' (click)="saveriskAssessmentForm()" [disabled]='disable()' styleClass='button-action'></app-button>
+    <app-button label='Save and Add Additional Risks' (click)="saveriskAssessmentForm()" [disabled]='disable()' styleClass='button-action'></app-button>
     <app-button label='I have no risks to enter' styleClass='button-action'></app-button>
   </div>
     <br><br><br><br>

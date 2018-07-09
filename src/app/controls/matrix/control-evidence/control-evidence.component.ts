@@ -51,14 +51,14 @@ export class ControlEvidenceComponent implements OnInit {
   //   this.ControlEvidenceForm.reset();
   // }
 
-  // disable() {
-  //   if ( !this.selectedbusinessFunction || !this.selectedmatrixType || !this.selectedCertificationResponsibility 
-  //     || !this.processOverview) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
+  disable() {
+    if ( !this.selectedSource || !this.trackingNumber || !this.controlEvidence 
+      || !this.selectedEnhancementProject) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   // /* This method will reset all values to default */
   resetAll() {

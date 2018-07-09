@@ -87,15 +87,39 @@ export class ControlComponent implements OnInit {
   //   this.createcontrolForm();
   // }
 
+
+      changeAditionalProcedure(event) {
+    if (event === 'none') {
+      this.selectedAditionalProcedure = [];
+    } else {
+      this.selectedAditionalProcedure = event;
+    }
+  }
+
+     changeselectedElements(event) {
+    if (event === 'none') {
+      this.selectedElements = [];
+    } else {
+      this.selectedElements = event;
+    }
+  }
+  
+    changeselectedManagementAssertion(event) {
+    if (event === 'none') {
+      this.selectedManagementAssertion = [];
+    } else {
+      this.selectedManagementAssertion = event;
+    }
+  }
     /* This method will enable or disable the Save button based on the mandatory fields selected */
-  // disable() {
-  //   if ( !this.selectedbusinessFunction || !this.selectedmatrixType || !this.selectedCertificationResponsibility 
-  //     || !this.processOverview) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
+  disable() {
+    if ( !this.selectedControl || !this.selectedFramework 
+      || !this.selectedElements || !this.businessContinuity || !this.selectedEnhancementProject || !this.trackingNumber) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   // /* This method will reset all values to default */
   resetAll() {

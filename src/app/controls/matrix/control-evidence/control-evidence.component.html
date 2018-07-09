@@ -70,8 +70,8 @@
 </div>
   <div class="text-center">
 
-    <app-button label='Add more evidence to this Control' (click)='saveControlEvidenceForm()' styleClass='button-action'></app-button>
-    <app-button label='Save and return to Matrix Grid' (click)='saveControlEvidenceForm()' styleClass='button-action'></app-button>
+    <app-button label='Add more evidence to this Control' [disabled]='disable()' (click)='saveControlEvidenceForm()' styleClass='button-action'></app-button>
+    <app-button label='Save and return to Matrix Grid' [disabled]='disable()' (click)='saveControlEvidenceForm()' styleClass='button-action'></app-button>
   </div>
     <br><br><br><br>
 <div class="row addKeyControlButtons">

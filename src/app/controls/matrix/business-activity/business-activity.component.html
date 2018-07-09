@@ -93,7 +93,7 @@
     <div>
         <div class="row paddingTopClass">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="required control-label">Title</label>
+            <label class="control-label">Title</label>
           </div>
         </div>
         <div class="row paddingDataClass">
@@ -119,7 +119,7 @@
         <div>
         <div class="row paddingTopClass">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="required control-label">Sub Activity</label>
+            <label class="control-label">Sub Activity</label>
           </div>
         </div>
         <div class="row paddingDataClass">
@@ -173,7 +173,7 @@
   </div>
 </div>
   <div class="text-center">
-    <button pButton type="submit" (click)="savebusinessActivityForm()" label="Save and Enter Control"></button>
+    <button pButton type="submit" (click)="savebusinessActivityForm()" [disabled]='disable()' label="Save and Enter Control"></button>
   </div>
     <br><br><br><br>
 <div class="row addKeyControlButtons">

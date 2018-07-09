@@ -60,8 +60,7 @@ export class BusinessActivityComponent implements OnInit {
   // }
 
   disable() {
-    if ( !this.selectedTitle || !this.activity || !this.subActivity 
-      || !this.selectedenhancementProject || !this.trackingNumber) {
+    if ( !this.activity || !this.selectedenhancementProject || !this.trackingNumber) {
       return true;
     } else {
       return false;
