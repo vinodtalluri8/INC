@@ -1,69 +1,82 @@
-<div class="container-fluid">
-  <form [formGroup]="ControlEvidenceForm" (ngSubmit)="onSubmit()">
-  <div class="row">
-    <div class="col">
-      <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="required control-label">Source</label>
-
-          <p-dropdown formControlName="source" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="false"></p-dropdown>
-
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="required control-label">Enhancement Project</label>
-          <p-dropdown formControlName="enhancementProject" [options]="mockDropDownData" placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="false"></p-dropdown>
-          
-        </div>
-      </div>
-    </div>
-    <div class="col">
-
-      <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="required control-label">Tracking Number</label>
-
-              <input formControlName="trackingNumber" id="input" type="text" pInputText>
-
-        </div>
-      </div>
-            <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="control-label">Implementation state</label>
-          <div>
-            <p-radioButton formControlName="implementationState" name="group1" value="Implemented" label="Implemented"></p-radioButton>
-            <p-radioButton formControlName="implementationState" name="group1" value="Will be Implemented" label="Will be Implemented"></p-radioButton>
+<div class="row">
+  <div class="col-lg-4 col-md-4 col-xs-4">
+    <div>
+        <div class="row paddingTopClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="required control-label">Source</label>
           </div>
-
         </div>
-      </div>
-    </div>
-    <div class="col">
-
-            <div class="row">
-        <div class="col-12">
-
-          <label for="title" class="required control-label">Control Evidence</label>
-          <textarea formControlName="controlEvidence" rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
+        <div class="row paddingDataClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedSource = $event' [selectedItem]='selectedSource'></app-dropdown>
+          </div>
         </div>
-      </div>
+    </div>
+    <div>
+        <div class="row paddingTopClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="required control-label">Enhancement Project</label>
+          </div>
+        </div>
+        <div class="row paddingDataClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedEnhancementProject = $event' [selectedItem]='selectedEnhancementProject'></app-dropdown>
+          </div>
+        </div>
     </div>
   </div>
-    <div class="text-center">
-  <button pButton type="submit" [disabled]="!ControlEvidenceForm.valid" label="Add more evidence to this Control"></button>
-  <button pButton type="submit" [disabled]="!ControlEvidenceForm.valid" label="Save and return to Matrix Grid"></button>
+  <div class="col-lg-4 col-md-4 col-xs-4">
+    <div>
+        <div class="row paddingTopClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="required control-label">Tracking Number</label>
+          </div>
+        </div>
+        <div class="row paddingDataClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-input (inputTextSelected)='this.trackingNumber = $event' #inputtrackingNumber [value]='trackingNumber' maxlength="60"></app-input>
+          </div>
+        </div>
     </div>
-  </form>
+    <div>
+        <div class="row paddingTopClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="control-label">Implementation state</label>
+          </div>
+        </div>
+        <div class="row paddingDataClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+             <p-radioButton name="group1" value="Implemented" label="Implemented"></p-radioButton>
+            <p-radioButton name="group1" value="Will be Implemented" label="Will be Implemented"></p-radioButton>
+          </div>
+        </div>
+    </div>
+    
+  </div>
+  <div class="col-lg-4 col-md-4 col-xs-4">
+    <div>
+        <div class="row paddingTopClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="required control-label">Control Evidence</label>
+          </div>
+        </div>
+        <div class="row paddingDataClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+                      <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.controlEvidence = $event' [value]='controlEvidence' name='control'></app-input-text-area>
+          </div>
+        </div>
+    </div> 
+  </div>
+</div>
+  <div class="text-center">
 
-  <div class="row footerFixed">
-    <div class="col">
-          <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>&nbsp;&nbsp;&nbsp;
-    <app-button label='Cancel'   styleClass='button-cancel'></app-button>
+    <app-button label='Add more evidence to this Control' (click)='saveControlEvidenceForm()' styleClass='button-action'></app-button>
+    <app-button label='Save and return to Matrix Grid' (click)='saveControlEvidenceForm()' styleClass='button-action'></app-button>
+  </div>
+    <br><br><br><br>
+<div class="row addKeyControlButtons">
+      <!--<app-button label='Save' (click)='saveKeyControl()' [disabled]='disable()' styleClass='button-action'></app-button>
+      <app-button label='Cancel' (click)='resetAll()' styleClass='button-cancel'></app-button>-->
+      <app-button label='Reset' (click)='resetAll()' styleClass='button-action'></app-button>
+      <app-button label='Cancel' styleClass='button-cancel'></app-button>
     </div>
-  </div>
-  </div>

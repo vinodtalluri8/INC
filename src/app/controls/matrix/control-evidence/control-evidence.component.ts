@@ -10,10 +10,15 @@ import { Router } from "@angular/router";
 })
 export class ControlEvidenceComponent implements OnInit {
   mockDropDownData:any = [];
-  ControlEvidenceForm: FormGroup;
+  // ControlEvidenceForm: FormGroup;
+  selectedSource;
+  selectedEnhancementProject;
+  trackingNumber;
+  controlEvidence;
+  dataJson;
 
   constructor(private fb: FormBuilder, private matrixService: MatrixService, private router:Router) {
-  this.createControlEvidenceForm();
+  // this.createControlEvidenceForm();
    }
 
   ngOnInit() {
@@ -27,23 +32,54 @@ export class ControlEvidenceComponent implements OnInit {
     );
   }
 
-  createControlEvidenceForm() {
-    this.ControlEvidenceForm = this.fb.group({
-      source: ['', Validators.required ],
-      enhancementProject: ['', Validators.required ],
-      controlEvidence: ['', Validators.required ],
-      trackingNumber: ['', Validators.required ],
-      implementationState: ''
-    });
-  }
+  // createControlEvidenceForm() {
+  //   this.ControlEvidenceForm = this.fb.group({
+  //     source: ['', Validators.required ],
+  //     enhancementProject: ['', Validators.required ],
+  //     controlEvidence: ['', Validators.required ],
+  //     trackingNumber: ['', Validators.required ],
+  //     implementationState: ''
+  //   });
+  // }
 
-  onSubmit() {
-   console.log('Form data',this.ControlEvidenceForm.value);
-  //  this.router.navigate(['matrix/businessProcess']);
-  }
+  // onSubmit() {
+  //  console.log('Form data',this.ControlEvidenceForm.value);
+  // //  this.router.navigate(['matrix/businessProcess']);
+  // }
 
-  resetForm(){
-    this.ControlEvidenceForm.reset();
+  // resetForm(){
+  //   this.ControlEvidenceForm.reset();
+  // }
+
+  // disable() {
+  //   if ( !this.selectedbusinessFunction || !this.selectedmatrixType || !this.selectedCertificationResponsibility 
+  //     || !this.processOverview) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
+
+  // /* This method will reset all values to default */
+  resetAll() {
+  this.selectedSource = '';
+  this.selectedEnhancementProject = '';
+  this.trackingNumber = '';
+  this.controlEvidence = '';
+}
+
+  saveControlEvidenceForm() {
+    // if (!this.disable()) {
+      // this.generateCertificateResponseJson();
+      // this.generateRelatedSystemsJson();
+      this.dataJson = {
+        'source': this.selectedSource,
+        'businessFunction': this.selectedEnhancementProject,
+        'trackingNumber': this.trackingNumber,
+        'controlEvidence': this.controlEvidence
+      };
+    // }
+    console.log('data.......',this.dataJson);
   }
 
 }
