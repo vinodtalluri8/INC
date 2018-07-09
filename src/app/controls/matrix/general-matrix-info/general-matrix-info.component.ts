@@ -58,6 +58,26 @@ export class GeneralMatrixInfoComponent implements OnInit {
   displayModel() {
     this.display = true;
   }
+    /**
+   * This method will assign the changed process value
+   * @param event
+   */
+  changeselectedRelatedSystems(event) {
+    if (event === 'none') {
+      this.selectedRelatedSystems = [];
+    } else {
+      this.selectedRelatedSystems = event;
+    }
+  }
+  changeCertificationResponsibility(event) {
+    if (event === 'none') {
+      this.selectedCertificationResponsibility = [];
+    } else {
+      this.selectedCertificationResponsibility = event;
+      console.log(event);
+      
+    }
+  }
   // onSubmit() {
   //   console.log('Form data', this.generalMatrixForm.value);
   //   this.router.navigate(['matrix/riskAssessment']);
@@ -69,7 +89,7 @@ export class GeneralMatrixInfoComponent implements OnInit {
 
     /* This method will enable or disable the Save button based on the mandatory fields selected */
   disable() {
-    if ( !this.selectedbusinessFunction || !this.selectedmatrixType || !this.selectedCertificationResponsibility 
+    if ( !this.selectedbusinessFunction || !this.selectedmatrixType || !this.matrixName || !this.selectedCertificationResponsibility
       || !this.processOverview) {
       return true;
     } else {
@@ -92,39 +112,20 @@ export class GeneralMatrixInfoComponent implements OnInit {
 
   saveKeyControl() {
     // if (!this.disable()) {
-      this.generateCertificateResponseJson();
-      this.generateRelatedSystemsJson();
+
       this.dataJson = {
         'group': this.selectedGroup,
         'businessFunction': this.selectedbusinessFunction,
         'matrixType': this.selectedmatrixType,
         'matrixName': this.matrixName,
-        'certificationResponsibility': this.certificateResponseJson,
-        'relatedSystems': this.certificateResponseJson,
+        'certificationResponsibility': this.selectedCertificationResponsibility,
+        'relatedSystems': this.selectedRelatedSystems,
         'processOverview': this.processOverview,
         'inherentRiskRating': this.selectedInherentRiskRating,
         'controlRiskRating': this.selectedControlRiskRating
       };
     // }
-    console.log('data.......',this.dataJson);
-  }
-
-    generateCertificateResponseJson() {
-    for (let i = 0; i < this.selectedCertificationResponsibility.length; i++) {
-      this.certificateResponseJson.push({
-        'certificateResponseId': this.selectedCertificationResponsibility[i],
-        'certificateResponseName': this.selectedCertificationResponsibility[i]
-      });
-    }
-  }
-
-      generateRelatedSystemsJson() {
-    for (let i = 0; i < this.selectedRelatedSystems.length; i++) {
-      this.certificateResponseJson.push({
-        'relatedSystemsId': this.selectedRelatedSystems[i],
-        'relatedSystemsName': this.selectedRelatedSystems[i]
-      });
-    }
+    console.log('data.......', this.dataJson);
   }
 
 }

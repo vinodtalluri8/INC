@@ -1,42 +1,22 @@
 [
    {  
       "label":"Controls Without a Procedure",
-      "value":{  
-         "id":1,
-         "name":"ARG",
-         "code":"NY"
-      }
+      "value":"Controls Without a Procedure"
    },
    {  
       "label":"Evaluation Report",
-      "value":{  
-         "id":2,
-         "name":"CSPM",
-         "code":"RM"
-      }
+      "value":"Evaluation Report"
    },
    {  
       "label":"Procedure Checklists",
-      "value":{  
-         "id":3,
-         "name":"COMPLIANCE",
-         "code":"LDN"
-      }
+      "value":"Procedure Checklists"
    },
    {  
       "label":"Procedures withoyut a Checklist",
-      "value":{  
-         "id":4,
-         "name":"DCIO",
-         "code":"IST"
-      }
+      "value":"Procedures withoyut a Checklist"
    },
    {  
       "label":"Yearly Summary",
-      "value":{  
-         "id":5,
-         "name":"GIST",
-         "code":"PRS"
-      }
+      "value":"Yearly Summary"
    }
 ]
