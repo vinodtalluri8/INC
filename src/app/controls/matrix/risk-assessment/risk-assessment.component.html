@@ -1,41 +1,53 @@
-<div class="container-fluid">
-  <form [formGroup]="riskAssesmentForm" (ngSubmit)="onSubmit()">
-  <div class="row">
-      <div class="col-4">
-          <div class="row">
-            <div class="col-12">
-                    <label for="title" class="required control-label">Driver Description:</label>
-      
-                    <textarea formControlName="driverDescription" rows="4" cols="30" pInputTextarea autoResize="autoResize"></textarea>
-                    
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-                    <label for="title" class="required control-label">Driver Category:</label>
-                    <p-multiSelect formControlName="driverCategory" [options]="mockMultiDropDownData"></p-multiSelect>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-                <label for="title" class="required control-label">Event Type:</label>
-                  <p-dropdown [options]="mockDropDownData" formControlName="eventType"  placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="false"></p-dropdown>
-            </div>
+<div class="row">
+  <div class="col-lg-4 col-md-4 col-xs-4">
+    <div>
+        <div class="row paddingTopClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="required control-label">Driver Description</label>
           </div>
         </div>
+        <div class="row paddingDataClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.driverDescription = $event' [value]='driverDescription' name='control'></app-input-text-area>
+          </div>
+        </div>
+    </div>
+    <div>
+        <div class="row paddingTopClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="required control-label">Driver Category</label>
+          </div>
+        </div>
+        <div class="row paddingDataClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+                        <app-multiselect [dataSource]='mockMultiDropDownData' (selectedMultiSelect)='changeDriverCategory($event)' [selectedItems]='selectedDriverCategory'></app-multiselect>
+          </div>
+        </div>
+    </div>
+    <div>
+        <div class="row paddingTopClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="required control-label">Event Type</label>
+          </div>
+        </div>
+        <div class="row paddingDataClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedEventType = $event' [selectedItem]='selectedEventType'></app-dropdown>
+          </div>
+        </div>
+    </div>
   </div>
-  <br>
+</div>
+<br>
   <div class="text-center">
-    <button pButton type="submit" [disabled]="!riskAssesmentForm.valid" label="Save and Enter Business Process"></button>
-  <button pButton type="submit" [disabled]="!riskAssesmentForm.valid" label="Save and Add Additional Risks"></button>
-  <button pButton type="submit" label="I have no risks to enter"></button>
+    <app-button label='Save and Enter Business Process' styleClass='button-action'></app-button>
+    <app-button label='Save and Add Additional Risks' styleClass='button-action'></app-button>
+    <app-button label='I have no risks to enter' styleClass='button-action'></app-button>
   </div>
-  </form>
-
-<div class="row footerFixed">
-  <div class="col">
-      <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>&nbsp;&nbsp;&nbsp;&nbsp;
-  <app-button label='Cancel'   styleClass='button-cancel'></app-button>
-  </div>
-</div>
-</div>
+    <br><br><br><br>
+<div class="row addKeyControlButtons">
+      <!--<app-button label='Save' (click)='saveKeyControl()' [disabled]='disable()' styleClass='button-action'></app-button>
+      <app-button label='Cancel' (click)='resetAll()' styleClass='button-cancel'></app-button>-->
+      <app-button label='Reset' styleClass='button-action'></app-button>
+      <app-button label='Cancel' styleClass='button-cancel'></app-button>
+    </div>

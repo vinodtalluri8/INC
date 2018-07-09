@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!--<div class="container-fluid">
   <form [formGroup]="BusinessActivityForm" (ngSubmit)="onSubmit()">
     <div class="row">
 
@@ -86,4 +86,99 @@
     <app-button label='Cancel' styleClass='button-cancel'></app-button>
     </div>
   </div>
+    </div>-->
+
+    <div class="row">
+  <div class="col-lg-4 col-md-4 col-xs-4">
+    <div>
+        <div class="row paddingTopClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="required control-label">Title</label>
+          </div>
+        </div>
+        <div class="row paddingDataClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedTitle = $event' [selectedItem]='selectedTitle'></app-dropdown>
+          </div>
+        </div>
+    </div>
+    <div>
+        <div class="row paddingTopClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="required control-label">Activity</label>
+          </div>
+        </div>
+        <div class="row paddingDataClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+             <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.processOverview = $event' [value]='processOverview' name='control'></app-input-text-area>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-4 col-xs-4">
+        <div>
+        <div class="row paddingTopClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="required control-label">Sub Activity</label>
+          </div>
+        </div>
+        <div class="row paddingDataClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+             <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.processOverview = $event' [value]='processOverview' name='control'></app-input-text-area>
+          </div>
+        </div>
+    </div>
+    <div>
+        <div class="row paddingTopClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="required control-label">Implementation State</label>
+          </div>
+        </div>
+        <div class="row paddingDataClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            
+              <p-radioButton formControlName="implementationState" name="group1" value="Implemented" label="Implemented"></p-radioButton>
+              <p-radioButton formControlName="implementationState" name="group1" value="Will be Implemented" label="Will be Implemented"></p-radioButton>
+            
+          </div>
+        </div>
+    </div>
+    
+  </div>
+  <div class="col-lg-4 col-md-4 col-xs-4">
+    <div>
+        <div class="row paddingTopClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="required control-label">Enhancement Project</label>
+          </div>
+        </div>
+        <div class="row paddingDataClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-dropdown [datasource]='departments' (selectedItemChange)='this.selectedmatrixType = $event' [selectedItem]='selectedmatrixType'></app-dropdown>
+          </div>
+        </div>
+    </div>
+    <div>
+        <div class="row paddingTopClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="required control-label">Tracking Number</label>
+          </div>
+        </div>
+        <div class="row paddingDataClass">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-input (inputTextSelected)='this.matrixName=$event' #inputmatrixName [value]='matrixName' maxlength="60"></app-input>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+  <div class="text-center">
+    <button pButton type="submit" label="Save and Enter Risks"></button>
+  </div>
+    <br><br><br><br>
+<div class="row addKeyControlButtons">
+      <!--<app-button label='Save' (click)='saveKeyControl()' [disabled]='disable()' styleClass='button-action'></app-button>
+      <app-button label='Cancel' (click)='resetAll()' styleClass='button-cancel'></app-button>-->
+      <app-button label='Reset' styleClass='button-action'></app-button>
+      <app-button label='Cancel' styleClass='button-cancel'></app-button>
     </div>

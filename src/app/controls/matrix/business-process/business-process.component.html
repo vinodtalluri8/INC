@@ -1,31 +1,40 @@
-<div class="container-fluid">
-  <form [formGroup]="businessProcessForm" (ngSubmit)="onSubmit()">
-    <div class="row">
-        <div class="col-4">
-            <div class="row">
-              <div class="col-12">
-                      <label for="title" class="required control-label">Business Process:</label>
-                      <input formControlName="businessProcess" id="input" type="text" size="30" pInputText>                    
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                      <label for="title" class="required control-label">Applicable to:</label>
-                      <p-dropdown formControlName="applicableTo" [options]="mockDropDownData"  placeholder="Select option" optionLabel="name" filter='true' autoWidth='false' [showClear]="false"></p-dropdown>
-              </div>
-            </div>          
-          </div>
-    </div>
-    <br>
-      <div class="text-center">
-    <button pButton type="submit" [disabled]="!businessProcessForm.valid" label="Save and Enter Business Actiity"></button>
+<div class="row">
+  <div class="col-lg-4 col-md-4 col-xs-4">
+    <div>
+      <div class="row paddingTopClass">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <label class="required control-label">Business Process</label>
+        </div>
       </div>
-  </form>
-  
-  <div class="row footerFixed">
-    <div class="col">
-          <app-button label='Reset' (click)="resetForm()" styleClass='button-action'></app-button>&nbsp;&nbsp;&nbsp;
-    <app-button label='Cancel'   styleClass='button-cancel'></app-button>
+      <div class="row paddingDataClass">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <app-input (inputTextSelected)='this.BusinessProcess=$event' #inputBusinessProcess [value]='BusinessProcess' maxlength="60"></app-input>
+
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="row paddingTopClass">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <label class="required control-label">Applicable to</label>
+        </div>
+      </div>
+      <div class="row paddingDataClass">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+
+          <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedApplicableTo = $event' [selectedItem]='selectedApplicableTo'></app-dropdown>
+        </div>
+      </div>
     </div>
   </div>
-  </div>
+</div>
+<div class="text-center">
+  <app-button label='Save and Enter Risks' styleClass='button-action'></app-button>
+</div>
+<br><br><br><br>
+<div class="row addKeyControlButtons">
+  <!--<app-button label='Save' (click)='saveKeyControl()' [disabled]='disable()' styleClass='button-action'></app-button>
+      <app-button label='Cancel' (click)='resetAll()' styleClass='button-cancel'></app-button>-->
+  <app-button label='Reset' styleClass='button-action'></app-button>
+  <app-button label='Cancel' styleClass='button-cancel'></app-button>
+</div>

@@ -1,6 +1,6 @@
 [
    {  
-      "name":"Controls Without a Procedure",
+      "label":"Controls Without a Procedure",
       "value":{  
          "id":1,
          "name":"ARG",
@@ -8,7 +8,7 @@
       }
    },
    {  
-      "name":"Evaluation Report",
+      "label":"Evaluation Report",
       "value":{  
          "id":2,
          "name":"CSPM",
@@ -16,7 +16,7 @@
       }
    },
    {  
-      "name":"Procedure Checklists",
+      "label":"Procedure Checklists",
       "value":{  
          "id":3,
          "name":"COMPLIANCE",
@@ -24,7 +24,7 @@
       }
    },
    {  
-      "name":"Procedures withoyut a Checklist",
+      "label":"Procedures withoyut a Checklist",
       "value":{  
          "id":4,
          "name":"DCIO",
@@ -32,7 +32,7 @@
       }
    },
    {  
-      "name":"Yearly Summary",
+      "label":"Yearly Summary",
       "value":{  
          "id":5,
          "name":"GIST",
