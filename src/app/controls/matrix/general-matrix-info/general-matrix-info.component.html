@@ -3,7 +3,7 @@
     <div>
         <div class="row paddingTopClass">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="required control-label">Group</label>
+            <label class="control-label">Group</label>
           </div>
         </div>
         <div class="row paddingDataClass">
@@ -65,12 +65,12 @@
     <div>
         <div class="row paddingTopClass">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="required control-label">Inherent Risk Rating</label>
+            <label class="control-label">Inherent Risk Rating</label>
           </div>
         </div>
         <div class="row paddingDataClass">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-dropdown [datasource]='departments' (selectedItemChange)='this.selectedInherentRiskRating = $event' [selectedItem]='selectedInherentRiskRating'></app-dropdown>
+            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedInherentRiskRating = $event' [selectedItem]='selectedInherentRiskRating'></app-dropdown>
           </div>
         </div>
     </div>
@@ -84,14 +84,14 @@
         </div>
         <div class="row paddingDataClass">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-dropdown [datasource]='departments' (selectedItemChange)='this.selectedmatrixType = $event' [selectedItem]='selectedmatrixType'></app-dropdown>
+            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedmatrixType = $event' [selectedItem]='selectedmatrixType'></app-dropdown>
           </div>
         </div>
     </div>
     <div>
         <div class="row paddingTopClass">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="required control-label">Related Systems</label>
+            <label class="control-label">Related Systems</label>
           </div>
         </div>
         <div class="row paddingDataClass">
@@ -103,19 +103,19 @@
     <div>
         <div class="row paddingTopClass">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="required control-label">Control Risk Rating</label>
+            <label class="control-label">Control Risk Rating</label>
           </div>
         </div>
         <div class="row paddingDataClass">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-dropdown [datasource]='departments' (selectedItemChange)='this.selectedControlRiskRating = $event' [selectedItem]='selectedControlRiskRating'></app-dropdown>
+            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedControlRiskRating = $event' [selectedItem]='selectedControlRiskRating'></app-dropdown>
           </div>
         </div>
     </div>
   </div>
 </div>
   <div class="text-center">
-    <button pButton type="submit" label="Save and Enter Risks"></button>
+    <button pButton type="submit" (click)='saveKeyControl()' [disabled]='disable()' label="Save and Enter Risks"></button>
   </div>
     <br><br><br><br>
 <div class="row addKeyControlButtons">

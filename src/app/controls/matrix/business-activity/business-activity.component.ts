@@ -10,11 +10,17 @@ import { Router } from "@angular/router";
 })
 export class BusinessActivityComponent implements OnInit {
   mockDropDownData;
-  BusinessActivityForm: FormGroup;
+  // BusinessActivityForm: FormGroup;
   mockMultiDropDownData;
+  selectedTitle;
+  activity;
+  subActivity;
+  selectedenhancementProject;
+  trackingNumber;
+  dataJson;
 
   constructor(private fb: FormBuilder, private matrixService: MatrixService, private router:Router) {
-this.createBusinessActivityForm();
+// this.createBusinessActivityForm();
    }
 
   ngOnInit() {
@@ -33,24 +39,54 @@ this.createBusinessActivityForm();
     );
   }
 
-    createBusinessActivityForm() {
-    this.BusinessActivityForm = this.fb.group({
-      title: '',
-      subActivity: '',
-      implementationState: ['', Validators.required ],
-      activity: ['', Validators.required ],
-      enhancementProject: ['', Validators.required ],
-      trackingNumber: ['', Validators.required ]
-    });
+  //   createBusinessActivityForm() {
+  //   this.BusinessActivityForm = this.fb.group({
+  //     title: '',
+  //     subActivity: '',
+  //     implementationState: ['', Validators.required ],
+  //     activity: ['', Validators.required ],
+  //     enhancementProject: ['', Validators.required ],
+  //     trackingNumber: ['', Validators.required ]
+  //   });
+  // }
+
+  // onSubmit() {
+  //  console.log('Form data',this.BusinessActivityForm.value);
+  //   this.router.navigate(['matrix/control']); 
+  // }
+
+  // resetForm(){
+  //   this.BusinessActivityForm.reset();
+  // }
+
+  disable() {
+    if ( !this.selectedTitle || !this.activity || !this.subActivity 
+      || !this.selectedenhancementProject || !this.trackingNumber) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
-  onSubmit() {
-   console.log('Form data',this.BusinessActivityForm.value);
-    this.router.navigate(['matrix/control']); 
-  }
+  // /* This method will reset all values to default */
+  resetAll() {
+  this.selectedTitle = '';
+  this.activity = '';
+  this.subActivity = '';
+  this.selectedenhancementProject = '';
+  this.trackingNumber = '';
+}
 
-  resetForm(){
-    this.BusinessActivityForm.reset();
+  savebusinessActivityForm() {
+    // if (!this.disable()) {
+      this.dataJson = {
+        'title': this.selectedTitle,
+        'activity': this.activity,
+        'subActivity': this.subActivity,
+        'enhancementProject': this.selectedenhancementProject,
+        'trackingNumber': this.trackingNumber
+      };
+    // }
+    console.log('data.......',this.dataJson);
   }
-
 }

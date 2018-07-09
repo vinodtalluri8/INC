@@ -110,7 +110,7 @@
         </div>
         <div class="row paddingDataClass">
           <div class="col-sm-12 col-md-12 col-lg-12">
-             <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.processOverview = $event' [value]='processOverview' name='control'></app-input-text-area>
+             <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.activity = $event' [value]='activity' name='activity'></app-input-text-area>
           </div>
         </div>
     </div>
@@ -124,7 +124,7 @@
         </div>
         <div class="row paddingDataClass">
           <div class="col-sm-12 col-md-12 col-lg-12">
-             <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.processOverview = $event' [value]='processOverview' name='control'></app-input-text-area>
+             <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.subActivity = $event' [value]='subActivity' name='subActivity'></app-input-text-area>
           </div>
         </div>
     </div>
@@ -154,7 +154,7 @@
         </div>
         <div class="row paddingDataClass">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-dropdown [datasource]='departments' (selectedItemChange)='this.selectedmatrixType = $event' [selectedItem]='selectedmatrixType'></app-dropdown>
+            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedenhancementProject = $event' [selectedItem]='selectedenhancementProject'></app-dropdown>
           </div>
         </div>
     </div>
@@ -166,19 +166,19 @@
         </div>
         <div class="row paddingDataClass">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-input (inputTextSelected)='this.matrixName=$event' #inputmatrixName [value]='matrixName' maxlength="60"></app-input>
+            <app-input (inputTextSelected)='this.trackingNumber=$event' #inputtrackingNumber [value]='trackingNumber' maxlength="60"></app-input>
           </div>
         </div>
     </div>
   </div>
 </div>
   <div class="text-center">
-    <button pButton type="submit" label="Save and Enter Risks"></button>
+    <button pButton type="submit" (click)="savebusinessActivityForm()" label="Save and Enter Control"></button>
   </div>
     <br><br><br><br>
 <div class="row addKeyControlButtons">
       <!--<app-button label='Save' (click)='saveKeyControl()' [disabled]='disable()' styleClass='button-action'></app-button>
       <app-button label='Cancel' (click)='resetAll()' styleClass='button-cancel'></app-button>-->
-      <app-button label='Reset' styleClass='button-action'></app-button>
+      <app-button label='Reset' (click)='resetAll()' styleClass='button-action'></app-button>
       <app-button label='Cancel' styleClass='button-cancel'></app-button>
     </div>

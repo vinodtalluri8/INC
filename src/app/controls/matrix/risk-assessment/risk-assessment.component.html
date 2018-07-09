@@ -8,7 +8,7 @@
         </div>
         <div class="row paddingDataClass">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.driverDescription = $event' [value]='driverDescription' name='control'></app-input-text-area>
+            <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.driverDescription = $event' [value]='driverDescription' name='driverDescription'></app-input-text-area>
           </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
         </div>
         <div class="row paddingDataClass">
           <div class="col-sm-12 col-md-12 col-lg-12">
-                        <app-multiselect [dataSource]='mockMultiDropDownData' (selectedMultiSelect)='changeDriverCategory($event)' [selectedItems]='selectedDriverCategory'></app-multiselect>
+            <app-multiselect [dataSource]='mockMultiDropDownData' (selectedMultiSelect)='changeDriverCategory($event)' [selectedItems]='selectedDriverCategory'></app-multiselect>
           </div>
         </div>
     </div>
@@ -40,14 +40,14 @@
 </div>
 <br>
   <div class="text-center">
-    <app-button label='Save and Enter Business Process' styleClass='button-action'></app-button>
-    <app-button label='Save and Add Additional Risks' styleClass='button-action'></app-button>
+    <app-button label='Save and Enter Business Process' (click)="saveriskAssessmentForm()" styleClass='button-action'></app-button>
+    <app-button label='Save and Add Additional Risks' (click)="saveriskAssessmentForm()" styleClass='button-action'></app-button>
     <app-button label='I have no risks to enter' styleClass='button-action'></app-button>
   </div>
     <br><br><br><br>
 <div class="row addKeyControlButtons">
       <!--<app-button label='Save' (click)='saveKeyControl()' [disabled]='disable()' styleClass='button-action'></app-button>
       <app-button label='Cancel' (click)='resetAll()' styleClass='button-cancel'></app-button>-->
-      <app-button label='Reset' styleClass='button-action'></app-button>
+      <app-button label='Reset' (click)='resetAll()' styleClass='button-action'></app-button>
       <app-button label='Cancel' styleClass='button-cancel'></app-button>
     </div>

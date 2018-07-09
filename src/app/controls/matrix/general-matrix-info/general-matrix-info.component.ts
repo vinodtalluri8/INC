@@ -16,11 +16,13 @@ export class GeneralMatrixInfoComponent implements OnInit {
   matrixName;
   processOverview;
   selectedbusinessFunction;
-  changeCertificationResponsibility;
+  selectedCertificationResponsibility;
   selectedInherentRiskRating;
   selectedmatrixType;
   selectedRelatedSystems;
   selectedControlRiskRating;
+  dataJson;
+  certificateResponseJson;
 
   constructor(private fb: FormBuilder, private matrixService: MatrixService, private router:Router) {
     // this.createGeneralMatrixForm();
@@ -66,14 +68,14 @@ export class GeneralMatrixInfoComponent implements OnInit {
   // }
 
     /* This method will enable or disable the Save button based on the mandatory fields selected */
-  // disable() {
-  //   if ((!this.selectedCategory || this.selectedCategory.length === 0) || !this.selectedDepartments || !this.selectedNatureOfControls
-  //     || !this.title || !this.controlText || !this.activeDate || this.saved) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
+  disable() {
+    if ( !this.selectedbusinessFunction || !this.selectedmatrixType || !this.selectedCertificationResponsibility 
+      || !this.processOverview) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   // /* This method will reset all values to default */
   resetAll() {
@@ -81,10 +83,48 @@ export class GeneralMatrixInfoComponent implements OnInit {
   this.matrixName = '';
   this.processOverview = '';
   this.selectedbusinessFunction = '';
-  this.changeCertificationResponsibility = '';
+  this.selectedCertificationResponsibility = [];
   this.selectedInherentRiskRating = '';
   this.selectedmatrixType = '';
-  this.selectedRelatedSystems = '';
+  this.selectedRelatedSystems = [];
   this.selectedControlRiskRating = '';
+}
+
+  saveKeyControl() {
+    // if (!this.disable()) {
+      this.generateCertificateResponseJson();
+      this.generateRelatedSystemsJson();
+      this.dataJson = {
+        'group': this.selectedGroup,
+        'businessFunction': this.selectedbusinessFunction,
+        'matrixType': this.selectedmatrixType,
+        'matrixName': this.matrixName,
+        'certificationResponsibility': this.certificateResponseJson,
+        'relatedSystems': this.certificateResponseJson,
+        'processOverview': this.processOverview,
+        'inherentRiskRating': this.selectedInherentRiskRating,
+        'controlRiskRating': this.selectedControlRiskRating
+      };
+    // }
+    console.log('data.......',this.dataJson);
   }
+
+    generateCertificateResponseJson() {
+    for (let i = 0; i < this.selectedCertificationResponsibility.length; i++) {
+      this.certificateResponseJson.push({
+        'certificateResponseId': this.selectedCertificationResponsibility[i],
+        'certificateResponseName': this.selectedCertificationResponsibility[i]
+      });
+    }
+  }
+
+      generateRelatedSystemsJson() {
+    for (let i = 0; i < this.selectedRelatedSystems.length; i++) {
+      this.certificateResponseJson.push({
+        'relatedSystemsId': this.selectedRelatedSystems[i],
+        'relatedSystemsName': this.selectedRelatedSystems[i]
+      });
+    }
+  }
+
 }

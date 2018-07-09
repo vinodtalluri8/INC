@@ -11,10 +11,13 @@ import { Router } from "@angular/router";
 export class BusinessProcessComponent implements OnInit {
 
   mockDropDownData: any = [];
-  businessProcessForm: FormGroup;
+  // businessProcessForm: FormGroup;
+  BusinessProcess;
+  selectedApplicableTo;
+  dataJson;
 
   constructor(private fb: FormBuilder, private matrixService: MatrixService, private router:Router) {
-  this.createbusinessProcessForm();
+  // this.createbusinessProcessForm();
    }
 
   ngOnInit() {
@@ -28,20 +31,44 @@ export class BusinessProcessComponent implements OnInit {
     );
   }
 
-  createbusinessProcessForm() {
-    this.businessProcessForm = this.fb.group({
-      businessProcess: ['', Validators.required ],
-      applicableTo: ['', Validators.required ]
-    });
+  // createbusinessProcessForm() {
+  //   this.businessProcessForm = this.fb.group({
+  //     businessProcess: ['', Validators.required ],
+  //     applicableTo: ['', Validators.required ]
+  //   });
+  // }
+
+  // onSubmit() {
+  //  console.log('Form data',this.businessProcessForm.value);
+  //    this.router.navigate(['matrix/businessActivity']); 
+  // }
+
+  // resetForm(){
+  //   this.businessProcessForm.reset();
+  // }
+
+  disable() {
+    if ( !this.BusinessProcess || !this.selectedApplicableTo ) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
-  onSubmit() {
-   console.log('Form data',this.businessProcessForm.value);
-     this.router.navigate(['matrix/businessActivity']); 
+  // /* This method will reset all values to default */
+  resetAll() {
+  this.BusinessProcess = '';
+  this.selectedApplicableTo = [];
   }
 
-  resetForm(){
-    this.businessProcessForm.reset();
+  savebusinessProcessForm() {
+    // if (!this.disable()) {
+      this.dataJson = {
+        'businessProcess': this.BusinessProcess,
+        'applicableTo': this.selectedApplicableTo
+      };
+    // }
+    console.log('data.......',this.dataJson);
   }
 
 }
