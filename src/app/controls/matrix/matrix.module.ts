@@ -19,7 +19,7 @@ import {ButtonModule} from 'primeng/button';
 import {  ReactiveFormsModule } from '@angular/forms';
 import { MatrixService } from './services/matrix.service';
 import { CheckboxModule } from 'primeng/checkbox';
-import { DialogModule } from "primeng/dialog";
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   imports: [

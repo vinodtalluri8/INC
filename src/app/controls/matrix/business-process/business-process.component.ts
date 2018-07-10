@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatrixService } from "../services/matrix.service";
-import { Router } from "@angular/router";
+import { MatrixService } from '../services/matrix.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-business-process',
@@ -11,13 +11,11 @@ import { Router } from "@angular/router";
 export class BusinessProcessComponent implements OnInit {
 
   mockDropDownData: any = [];
-  // businessProcessForm: FormGroup;
   BusinessProcess;
   selectedApplicableTo;
   dataJson;
 
-  constructor(private fb: FormBuilder, private matrixService: MatrixService, private router:Router) {
-  // this.createbusinessProcessForm();
+  constructor(private fb: FormBuilder, private matrixService: MatrixService, private router: Router) {
    }
 
   ngOnInit() {
@@ -30,22 +28,6 @@ export class BusinessProcessComponent implements OnInit {
       }
     );
   }
-
-  // createbusinessProcessForm() {
-  //   this.businessProcessForm = this.fb.group({
-  //     businessProcess: ['', Validators.required ],
-  //     applicableTo: ['', Validators.required ]
-  //   });
-  // }
-
-  // onSubmit() {
-  //  console.log('Form data',this.businessProcessForm.value);
-  //    this.router.navigate(['matrix/businessActivity']); 
-  // }
-
-  // resetForm(){
-  //   this.businessProcessForm.reset();
-  // }
 
   disable() {
     if ( !this.BusinessProcess || !this.selectedApplicableTo ) {
@@ -68,7 +50,7 @@ export class BusinessProcessComponent implements OnInit {
         'applicableTo': this.selectedApplicableTo
       };
     // }
-    console.log('data.......',this.dataJson);
+    console.log('data.......', this.dataJson);
   }
 
 }

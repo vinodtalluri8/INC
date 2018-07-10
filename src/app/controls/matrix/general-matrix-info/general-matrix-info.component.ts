@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 export class GeneralMatrixInfoComponent implements OnInit {
     display: boolean;
   mockDropDownData;
-  // generalMatrixForm: FormGroup;
   mockMultiDropDownData;
   selectedGroup;
   matrixName;
@@ -24,8 +23,7 @@ export class GeneralMatrixInfoComponent implements OnInit {
   dataJson;
   certificateResponseJson;
 
-  constructor(private fb: FormBuilder, private matrixService: MatrixService, private router:Router) {
-    // this.createGeneralMatrixForm();
+  constructor(private fb: FormBuilder, private matrixService: MatrixService, private router: Router) {
   }
   ngOnInit() {
     this.preloadData();
@@ -42,19 +40,6 @@ export class GeneralMatrixInfoComponent implements OnInit {
       }
     );
   }
-  // createGeneralMatrixForm() {
-  //   this.generalMatrixForm = this.fb.group({
-  //     group: '',
-  //     matrixName: ['', Validators.required],
-  //     processOverview: ['', Validators.required],
-  //     businessFunction: ['', Validators.required],
-  //     certificationResponsibility: ['', Validators.required],
-  //     inherentRiskRating: '',
-  //     matrixType: ['', Validators.required],
-  //     relatedSystems: '',
-  //     controlRiskRating: ''
-  //   });
-  // }
   displayModel() {
     this.display = true;
   }
@@ -75,17 +60,9 @@ export class GeneralMatrixInfoComponent implements OnInit {
     } else {
       this.selectedCertificationResponsibility = event;
       console.log(event);
-      
+
     }
   }
-  // onSubmit() {
-  //   console.log('Form data', this.generalMatrixForm.value);
-  //   this.router.navigate(['matrix/riskAssessment']);
-  // }
-
-  // resetForm() {
-  //   this.generalMatrixForm.reset();
-  // }
 
     /* This method will enable or disable the Save button based on the mandatory fields selected */
   disable() {

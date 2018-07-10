@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatrixService } from "../services/matrix.service";
-import { Router } from "@angular/router";
+import { MatrixService } from '../services/matrix.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-control',
@@ -10,7 +10,6 @@ import { Router } from "@angular/router";
 })
 export class ControlComponent implements OnInit {
   mockDropDownData;
-  // controlForm: FormGroup;
   mockMultiDropDownData;
   isCheckedChecklist = false;
   controlText;
@@ -29,7 +28,6 @@ export class ControlComponent implements OnInit {
   dataJson;
 
   constructor(private fb: FormBuilder, private matrixService: MatrixService, private router: Router) {
-    // this.createcontrolForm();
   }
 
   ngOnInit() {
@@ -48,47 +46,7 @@ export class ControlComponent implements OnInit {
     );
   }
 
-  // createcontrolForm() {
-  //     this.controlForm = this.fb.group({
-  //       group: '',
-  //       aditionalProcedure: '',
-  //       businessContinuity: ['', Validators.required],
-  //       trackingNumber: ['', Validators.required],
-  //       checklist: ['', Validators.required],
-  //       framework: ['', Validators.required],
-  //       comment: ['', Validators.required],
-  //       control: ['', Validators.required],
-  //       elements: ['', Validators.required],
-  //       implementationState: '',
-  //       procedure: '',
-  //       managementAssertion: '',
-  //       enhancementProject: ['', Validators.required]
-  //     });
-  // }
-
-  // onSubmit() {
-  //   console.log('Form data', this.controlForm.value);
-  //   this.router.navigate(['matrix/controlEvidence']);
-  // }
-
-  // resetForm() {
-  //   this.controlForm.reset();
-  // }
-
-  // checkLisItem() {
-  //   if (this.isCheckedChecklist === false) {
-  //     console.log('this.isCheckedChecklist', this.isCheckedChecklist);
-  //     this.isCheckedChecklist = true;
-  //   }
-  //   else {
-  //     console.log('this.isCheckedChecklist', this.isCheckedChecklist);
-  //     this.isCheckedChecklist = false;
-  //   }
-  //   this.createcontrolForm();
-  // }
-
-
-      changeAditionalProcedure(event) {
+  changeAditionalProcedure(event) {
     if (event === 'none') {
       this.selectedAditionalProcedure = [];
     } else {
@@ -103,7 +61,7 @@ export class ControlComponent implements OnInit {
       this.selectedElements = event;
     }
   }
-  
+
     changeselectedManagementAssertion(event) {
     if (event === 'none') {
       this.selectedManagementAssertion = [];
@@ -113,7 +71,7 @@ export class ControlComponent implements OnInit {
   }
     /* This method will enable or disable the Save button based on the mandatory fields selected */
   disable() {
-    if ( !this.selectedControl || !this.selectedFramework 
+    if ( !this.selectedControl || !this.selectedFramework
       || !this.selectedElements || !this.businessContinuity || !this.selectedEnhancementProject || !this.trackingNumber) {
       return true;
     } else {
@@ -140,8 +98,6 @@ export class ControlComponent implements OnInit {
 
   saveControlForm() {
     // if (!this.disable()) {
-      // this.generateCertificateResponseJson();
-      // this.generateRelatedSystemsJson();
       this.dataJson = {
         'controlText': this.controlText,
         'group': this.selectedGroup,
@@ -158,7 +114,7 @@ export class ControlComponent implements OnInit {
         'managementAssertion': this.selectedManagementAssertion
       };
     // }
-    console.log('data.......',this.dataJson);
+    console.log('data.......', this.dataJson);
   }
 
 }

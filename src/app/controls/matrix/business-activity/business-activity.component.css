@@ -1,5 +1,4 @@
 .paddingTopClass {
-    /* padding-top: 10px;*/
     width: 227px;
 }
 
@@ -50,7 +49,6 @@ app-button {
     width: 100%;
     margin-left: -50px;
     padding-left: 30px;
-    /*top : calc(100% - 70px);*/
     height: 70px;
     padding-top: 10px;
     bottom: 0;
@@ -69,7 +67,6 @@ app-calender {
 }
 
 #department, #natureOfControls, #category, #process {
-    /*margin-left:7px;*/
     padding-left: 4em;
     padding-right: 1px;
 }

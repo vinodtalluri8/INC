@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatrixService } from "../services/matrix.service";
-import { Router } from "@angular/router";
+import { MatrixService } from '../services/matrix.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-business-activity',
@@ -10,7 +10,6 @@ import { Router } from "@angular/router";
 })
 export class BusinessActivityComponent implements OnInit {
   mockDropDownData;
-  // BusinessActivityForm: FormGroup;
   mockMultiDropDownData;
   selectedTitle;
   activity;
@@ -19,8 +18,7 @@ export class BusinessActivityComponent implements OnInit {
   trackingNumber;
   dataJson;
 
-  constructor(private fb: FormBuilder, private matrixService: MatrixService, private router:Router) {
-// this.createBusinessActivityForm();
+  constructor(private fb: FormBuilder, private matrixService: MatrixService, private router: Router) {
    }
 
   ngOnInit() {
@@ -38,26 +36,6 @@ export class BusinessActivityComponent implements OnInit {
       }
     );
   }
-
-  //   createBusinessActivityForm() {
-  //   this.BusinessActivityForm = this.fb.group({
-  //     title: '',
-  //     subActivity: '',
-  //     implementationState: ['', Validators.required ],
-  //     activity: ['', Validators.required ],
-  //     enhancementProject: ['', Validators.required ],
-  //     trackingNumber: ['', Validators.required ]
-  //   });
-  // }
-
-  // onSubmit() {
-  //  console.log('Form data',this.BusinessActivityForm.value);
-  //   this.router.navigate(['matrix/control']); 
-  // }
-
-  // resetForm(){
-  //   this.BusinessActivityForm.reset();
-  // }
 
   disable() {
     if ( !this.activity || !this.selectedenhancementProject || !this.trackingNumber) {
@@ -86,6 +64,6 @@ export class BusinessActivityComponent implements OnInit {
         'trackingNumber': this.trackingNumber
       };
     // }
-    console.log('data.......',this.dataJson);
+    console.log('data.......', this.dataJson);
   }
 }

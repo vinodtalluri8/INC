@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatrixService } from "../services/matrix.service";
-import { Router } from "@angular/router";
+import { MatrixService } from '../services/matrix.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-risk-assessment',
@@ -9,8 +9,7 @@ import { Router } from "@angular/router";
   styleUrls: ['./risk-assessment.component.css']
 })
 export class RiskAssessmentComponent implements OnInit {
-  mockDropDownData:any = [];
-  // riskAssesmentForm: FormGroup;
+  mockDropDownData: any = [];
   mockMultiDropDownData;
   driverDescription;
   selectedDriverCategory;
@@ -18,8 +17,7 @@ export class RiskAssessmentComponent implements OnInit {
   dataJson;
   driverCategoryJson;
 
-  constructor(private fb: FormBuilder, private matrixService: MatrixService, private router:Router) {
-  // this.createriskAssesmentForm();
+  constructor(private fb: FormBuilder, private matrixService: MatrixService, private router: Router) {
   }
 
   ngOnInit() {
@@ -46,23 +44,6 @@ export class RiskAssessmentComponent implements OnInit {
     }
   }
 
-  //   createriskAssesmentForm() {
-  //   this.riskAssesmentForm = this.fb.group({
-  //     driverDescription: ['', Validators.required ],
-  //     driverCategory: ['', Validators.required ],
-  //     eventType: ['', Validators.required ]
-  //   });
-  // }
-
-  // onSubmit() {
-  //  console.log('Form data',this.riskAssesmentForm.value);
-  //  this.router.navigate(['matrix/businessProcess']);
-  // }
-
-  // resetForm(){
-  //   this.riskAssesmentForm.reset();
-  // }
-
    disable() {
     if ( !this.driverDescription || !this.selectedDriverCategory || !this.selectedEventType) {
       return true;
@@ -87,10 +68,10 @@ export class RiskAssessmentComponent implements OnInit {
         'eventType': this.selectedEventType
       };
     // }
-    console.log('data.......',this.dataJson);
+    console.log('data.......', this.dataJson);
   }
 
-    generateDriverCategoryJson() {
+  generateDriverCategoryJson() {
     for (let i = 0; i < this.selectedDriverCategory.length; i++) {
       this.driverCategoryJson.push({
         'driverCategoryId': this.selectedDriverCategory[i],

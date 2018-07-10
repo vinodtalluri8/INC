@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatrixService } from "../services/matrix.service";
-import { Router } from "@angular/router";
+import { MatrixService } from '../services/matrix.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-control-evidence',
@@ -9,16 +9,14 @@ import { Router } from "@angular/router";
   styleUrls: ['./control-evidence.component.css']
 })
 export class ControlEvidenceComponent implements OnInit {
-  mockDropDownData:any = [];
-  // ControlEvidenceForm: FormGroup;
+  mockDropDownData: any = [];
   selectedSource;
   selectedEnhancementProject;
   trackingNumber;
   controlEvidence;
   dataJson;
 
-  constructor(private fb: FormBuilder, private matrixService: MatrixService, private router:Router) {
-  // this.createControlEvidenceForm();
+  constructor(private fb: FormBuilder, private matrixService: MatrixService, private router: Router) {
    }
 
   ngOnInit() {
@@ -32,27 +30,8 @@ export class ControlEvidenceComponent implements OnInit {
     );
   }
 
-  // createControlEvidenceForm() {
-  //   this.ControlEvidenceForm = this.fb.group({
-  //     source: ['', Validators.required ],
-  //     enhancementProject: ['', Validators.required ],
-  //     controlEvidence: ['', Validators.required ],
-  //     trackingNumber: ['', Validators.required ],
-  //     implementationState: ''
-  //   });
-  // }
-
-  // onSubmit() {
-  //  console.log('Form data',this.ControlEvidenceForm.value);
-  // //  this.router.navigate(['matrix/businessProcess']);
-  // }
-
-  // resetForm(){
-  //   this.ControlEvidenceForm.reset();
-  // }
-
-  disable() {
-    if ( !this.selectedSource || !this.trackingNumber || !this.controlEvidence 
+disable() {
+    if ( !this.selectedSource || !this.trackingNumber || !this.controlEvidence
       || !this.selectedEnhancementProject) {
       return true;
     } else {
@@ -70,8 +49,6 @@ export class ControlEvidenceComponent implements OnInit {
 
   saveControlEvidenceForm() {
     // if (!this.disable()) {
-      // this.generateCertificateResponseJson();
-      // this.generateRelatedSystemsJson();
       this.dataJson = {
         'source': this.selectedSource,
         'businessFunction': this.selectedEnhancementProject,
@@ -79,7 +56,7 @@ export class ControlEvidenceComponent implements OnInit {
         'controlEvidence': this.controlEvidence
       };
     // }
-    console.log('data.......',this.dataJson);
+    console.log('data.......', this.dataJson);
   }
 
 }

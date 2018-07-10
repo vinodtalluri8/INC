@@ -34,7 +34,7 @@ export class NavbarComponent implements OnInit {
     },
     {
       displayName: 'Key Controls',
-      route:'keycontrols'
+      route: 'keycontrols'
     },
      {
       displayName: 'Core Programs',
