@@ -20,6 +20,7 @@ import {  ReactiveFormsModule } from '@angular/forms';
 import { MatrixService } from './services/matrix.service';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DialogModule } from 'primeng/dialog';
+import { NewMatrixComponent } from './new-matrix/new-matrix.component';
 
 @NgModule({
   imports: [
@@ -38,7 +39,7 @@ DialogModule
      GeneralMatrixInfoComponent,
       MatrixTabComponent, RiskAssessmentComponent,
        BusinessActivityComponent, ControlComponent,
-        ControlEvidenceComponent, BusinessProcessComponent],
+        ControlEvidenceComponent, BusinessProcessComponent, NewMatrixComponent],
   providers: [MatrixService]
 })
 export class MatrixModule { }

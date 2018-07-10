@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-risk-maintenance',
@@ -8,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class RiskMaintenanceComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }

@@ -14,6 +14,9 @@ import { ControlComponent } from './controls/matrix/control/control.component';
 import { BusinessActivityComponent } from './controls/matrix/business-activity/business-activity.component';
 import { BusinessProcessComponent } from './controls/matrix/business-process/business-process.component';
 import { RiskAssessmentComponent } from './controls/matrix/risk-assessment/risk-assessment.component';
+// tslint:disable-next-line:max-line-length
+import { ControlObjectivesMaintenanceComponent } from './controls/maintenance/control-objectives-maintenance/control-objectives-maintenance.component';
+import { RiskMaintenanceComponent } from './controls/maintenance/risk-maintenance/risk-maintenance.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/keycontrols', pathMatch: 'full' },
@@ -30,13 +33,10 @@ const routes: Routes = [
   ]
 },
   { path: 'coreProgram', component: CoreProgramsComponent },
-  { path: 'maintainence', component: MaintenanceComponent },
-//   { path: 'maintainence', component: MaintenanceComponent, children: [
-//     { path: 'controlObjectivesMaintenance', component: ControlObjectivesMaintenanceComponent },
-//     { path: 'RiskMaintenance', component: RiskMaintenanceComponent }
-//   ]
-// },
   { path: 'keycontrols/addKeyControl', component: AddKeyControlsComponent },
+  { path: 'maintainence', component: MaintenanceComponent },
+  { path: 'controlObjectivesMaintenance', component: ControlObjectivesMaintenanceComponent },
+  { path: 'RiskMaintenance', component: RiskMaintenanceComponent },
 ];
 
 @NgModule({

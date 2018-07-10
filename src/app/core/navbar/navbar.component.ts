@@ -47,11 +47,11 @@ export class NavbarComponent implements OnInit {
       children: [
         {
           displayName: 'Control Objectives Maintenance',
-          route: ''
+          route: 'controlObjectivesMaintenance'
         },
         {
           displayName: 'Risk Maintenance',
-          route: ''
+          route: 'RiskMaintenance'
         }]
     }
   ];
