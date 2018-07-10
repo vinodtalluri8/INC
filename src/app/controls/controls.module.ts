@@ -20,6 +20,9 @@ import { SharedModule } from '../shared/shared.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+// tslint:disable-next-line:max-line-length
+import { ControlObjectivesMaintenanceComponent } from './maintenance/control-objectives-maintenance/control-objectives-maintenance.component';
+import { RiskMaintenanceComponent } from './maintenance/risk-maintenance/risk-maintenance.component';
 
 
 @NgModule({
@@ -36,7 +39,9 @@ import { MessageModule } from 'primeng/message';
     EditKeyControlsComponent,
     AuditComponent,
     CoreProgramsComponent,
-    MaintenanceComponent],
+    MaintenanceComponent,
+    ControlObjectivesMaintenanceComponent,
+    RiskMaintenanceComponent],
   providers: [
     DepartmentsService,
     CategoryService,

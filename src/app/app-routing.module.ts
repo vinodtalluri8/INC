@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/keycontrols', pathMatch: 'full' },
   { path: 'keycontrols', component: KeycontrolsComponent },
   { path: 'audit', component: AuditComponent },
-  { path: 'matrix', component: MatrixComponent, children: [
+  { path: 'Matrix', component: MatrixComponent, children: [
     { path: '', redirectTo: 'generalMatrixInformation', pathMatch: 'full' },
     { path: 'generalMatrixInformation', component: GeneralMatrixInfoComponent },
     { path: 'riskAssessment', component: RiskAssessmentComponent},
@@ -31,6 +31,11 @@ const routes: Routes = [
 },
   { path: 'coreProgram', component: CoreProgramsComponent },
   { path: 'maintainence', component: MaintenanceComponent },
+//   { path: 'maintainence', component: MaintenanceComponent, children: [
+//     { path: 'controlObjectivesMaintenance', component: ControlObjectivesMaintenanceComponent },
+//     { path: 'RiskMaintenance', component: RiskMaintenanceComponent }
+//   ]
+// },
   { path: 'keycontrols/addKeyControl', component: AddKeyControlsComponent },
 ];
 

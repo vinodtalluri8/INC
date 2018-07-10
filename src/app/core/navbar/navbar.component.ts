@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
       children: [
         {
           displayName: 'New Matrix',
-          route: 'matrix'
+          route: 'Matrix'
         }]
     },
     {
@@ -43,7 +43,16 @@ export class NavbarComponent implements OnInit {
       displayName: 'Audit',
     },
      {
-      displayName: 'Maintainance',
+      displayName: 'Maintenance',
+      children: [
+        {
+          displayName: 'Control Objectives Maintenance',
+          route: ''
+        },
+        {
+          displayName: 'Risk Maintenance',
+          route: ''
+        }]
     }
   ];
   ngOnInit() {
