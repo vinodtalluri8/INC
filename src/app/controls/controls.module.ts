@@ -23,6 +23,9 @@ import { MessageModule } from 'primeng/message';
 // tslint:disable-next-line:max-line-length
 import { ControlObjectivesMaintenanceComponent } from './maintenance/control-objectives-maintenance/control-objectives-maintenance.component';
 import { RiskMaintenanceComponent } from './maintenance/risk-maintenance/risk-maintenance.component';
+import { NewControlObjectiveComponent } from './maintenance/new-control-objective/new-control-objective.component';
+import { UpdateControlObjectiveComponent } from './maintenance/update-control-objective/update-control-objective.component';
+import { RouterModule } from "@angular/router";
 
 
 @NgModule({
@@ -32,7 +35,8 @@ import { RiskMaintenanceComponent } from './maintenance/risk-maintenance/risk-ma
     SharedModule,
     MessagesModule,
     MessageModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    RouterModule
   ],
   declarations: [KeycontrolsComponent,
     AddKeyControlsComponent,
@@ -41,7 +45,9 @@ import { RiskMaintenanceComponent } from './maintenance/risk-maintenance/risk-ma
     CoreProgramsComponent,
     MaintenanceComponent,
     ControlObjectivesMaintenanceComponent,
-    RiskMaintenanceComponent],
+    RiskMaintenanceComponent,
+    NewControlObjectiveComponent,
+    UpdateControlObjectiveComponent],
   providers: [
     DepartmentsService,
     CategoryService,
