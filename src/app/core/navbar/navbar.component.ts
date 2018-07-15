@@ -51,7 +51,7 @@ export class NavbarComponent implements OnInit {
         },
         {
           displayName: 'Risk Maintenance',
-          route: 'RiskMaintenance'
+          route: 'riskMaintenance'
         }]
     }
   ];

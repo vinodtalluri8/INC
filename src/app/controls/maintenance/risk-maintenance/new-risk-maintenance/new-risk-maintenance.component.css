@@ -110,7 +110,3 @@ label {
     -webkit-transform: translateY(100% - 50px);
     transform: translateY(100% - 50px);
 }
-
-.ui-table-wrapper{
-    text-align: center !important;
-}

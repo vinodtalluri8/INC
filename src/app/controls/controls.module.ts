@@ -23,9 +23,12 @@ import { MessageModule } from 'primeng/message';
 // tslint:disable-next-line:max-line-length
 import { ControlObjectivesMaintenanceComponent } from './maintenance/control-objectives-maintenance/control-objectives-maintenance.component';
 import { RiskMaintenanceComponent } from './maintenance/risk-maintenance/risk-maintenance.component';
-import { NewControlObjectiveComponent } from './maintenance/new-control-objective/new-control-objective.component';
-import { UpdateControlObjectiveComponent } from './maintenance/update-control-objective/update-control-objective.component';
+import { NewControlObjectiveComponent } from './maintenance/control-objectives-maintenance/new-control-objective/new-control-objective.component';
+import { UpdateControlObjectiveComponent } from './maintenance/control-objectives-maintenance/update-control-objective/update-control-objective.component';
 import { RouterModule } from "@angular/router";
+import { TableModule } from 'primeng/table';
+import { NewRiskMaintenanceComponent } from './maintenance/risk-maintenance/new-risk-maintenance/new-risk-maintenance.component';
+import { UpdateRiskMaintenanceComponent } from './maintenance/risk-maintenance/update-risk-maintenance/update-risk-maintenance.component';
 
 
 @NgModule({
@@ -36,7 +39,8 @@ import { RouterModule } from "@angular/router";
     MessagesModule,
     MessageModule,
     AngularFontAwesomeModule,
-    RouterModule
+    RouterModule,
+    TableModule
   ],
   declarations: [KeycontrolsComponent,
     AddKeyControlsComponent,
@@ -47,7 +51,9 @@ import { RouterModule } from "@angular/router";
     ControlObjectivesMaintenanceComponent,
     RiskMaintenanceComponent,
     NewControlObjectiveComponent,
-    UpdateControlObjectiveComponent],
+    UpdateControlObjectiveComponent,
+    NewRiskMaintenanceComponent,
+    UpdateRiskMaintenanceComponent],
   providers: [
     DepartmentsService,
     CategoryService,

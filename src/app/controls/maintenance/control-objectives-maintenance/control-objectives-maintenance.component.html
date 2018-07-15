@@ -5,5 +5,25 @@
 </div>
 <div class="text-center">
   <a routerLink="/controlObjectivesMaintenance/add">Add a New Control Objective</a>
-  <a routerLink="/controlObjectivesMaintenance/update">Update Control Objective</a>
+</div>
+<div>
+
+    <p-table #scr [columns]="colHeaders" [value]="sales" [responsive]="true" [paginator]="true" [rows]="8"
+        [alwaysShowPaginator]="false" [exportFilename]="this.exportFileName" [loading]="loading" [resizableColumns]="true">
+      <ng-template pTemplate="header" let-columns>
+      <tr>
+          <th class="text-center" *ngFor="let col of columns" [style.width]="col.width" [pSortableColumn]="col.field" pResizableColumn>
+              {{col.header}}
+          </th>
+      </tr>
+  </ng-template>
+    <ng-template pTemplate="body" let-car>
+        <tr>
+            <td class="text-center">{{car.brand}}</td>
+            <!--<td>{{car.lastYearSale}}</td>-->
+            <td class="text-center"><app-button label='Delete' styleClass='button-action'></app-button></td>
+            <td class="text-center"><app-button label='Update' routerLink="/controlObjectivesMaintenance/update" styleClass='button-action'></app-button></td>
+        </tr>
+    </ng-template>
+    </p-table>
 </div>

@@ -17,8 +17,10 @@ import { RiskAssessmentComponent } from './controls/matrix/risk-assessment/risk-
 // tslint:disable-next-line:max-line-length
 import { ControlObjectivesMaintenanceComponent } from './controls/maintenance/control-objectives-maintenance/control-objectives-maintenance.component';
 import { RiskMaintenanceComponent } from './controls/maintenance/risk-maintenance/risk-maintenance.component';
-import { NewControlObjectiveComponent } from "./controls/maintenance/new-control-objective/new-control-objective.component";
-import { UpdateControlObjectiveComponent } from "./controls/maintenance/update-control-objective/update-control-objective.component";
+import { NewControlObjectiveComponent } from "./controls/maintenance/control-objectives-maintenance/new-control-objective/new-control-objective.component";
+import { UpdateControlObjectiveComponent } from "./controls/maintenance/control-objectives-maintenance/update-control-objective/update-control-objective.component";
+import { UpdateRiskMaintenanceComponent } from "./controls/maintenance/risk-maintenance/update-risk-maintenance/update-risk-maintenance.component";
+import { NewRiskMaintenanceComponent } from "./controls/maintenance/risk-maintenance/new-risk-maintenance/new-risk-maintenance.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/keycontrols', pathMatch: 'full' },
@@ -38,10 +40,11 @@ const routes: Routes = [
   { path: 'keycontrols/addKeyControl', component: AddKeyControlsComponent },
   { path: 'maintainence', component: MaintenanceComponent },
   { path: 'controlObjectivesMaintenance', component: ControlObjectivesMaintenanceComponent},
-      { path: 'controlObjectivesMaintenance/add', component: NewControlObjectiveComponent},
-      { path: 'controlObjectivesMaintenance/update', component: UpdateControlObjectiveComponent}
-   ,
-  { path: 'RiskMaintenance', component: RiskMaintenanceComponent },
+  { path: 'controlObjectivesMaintenance/add', component: NewControlObjectiveComponent},
+  { path: 'controlObjectivesMaintenance/update', component: UpdateControlObjectiveComponent},
+  { path: 'riskMaintenance', component: RiskMaintenanceComponent },
+  { path: 'riskMaintenance/add', component: NewRiskMaintenanceComponent},
+  { path: 'riskMaintenance/update', component: UpdateRiskMaintenanceComponent}
 ];
 
 @NgModule({
