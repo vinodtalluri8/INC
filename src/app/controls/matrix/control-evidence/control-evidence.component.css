@@ -44,9 +44,9 @@ app-button {
 }
 
 .addKeyControlButtons {
-    position: absolute !important;
+    position: fixed;
     background-color: #f5f5f5;
-    width: 100%;
+    width: 102%;
     margin-left: -50px;
     padding-left: 30px;
     height: 70px;

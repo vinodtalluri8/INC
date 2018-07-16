@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-update-risk-maintenance',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateRiskMaintenanceComponent implements OnInit {
 
-  constructor() { }
+  itemsPath: MenuItem[];
+  home: MenuItem;
+
+  constructor() {
+    this.home = { icon: 'fa fa-home' };
+    this.itemsPath = [{ label: 'Risk Maintenance', routerLink: ['/riskMaintenance']},
+    { label: 'Risk Update'}];
+  }
 
   ngOnInit() {
   }

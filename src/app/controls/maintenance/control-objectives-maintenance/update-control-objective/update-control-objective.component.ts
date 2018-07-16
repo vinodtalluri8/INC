@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-update-control-objective',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateControlObjectiveComponent implements OnInit {
 
-  constructor() { }
+  itemsPath: MenuItem[];
+  home: MenuItem;
+
+  constructor() {
+    this.home = { icon: 'fa fa-home' };
+    this.itemsPath = [{ label: 'Maintenance'},
+    { label: 'Control Objectives Maintenance', routerLink: ['/controlObjectivesMaintenance'] },
+    { label: 'Control Objectives Update'}];
+
+  }
 
   ngOnInit() {
   }
