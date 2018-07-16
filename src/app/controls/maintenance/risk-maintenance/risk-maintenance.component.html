@@ -1,8 +1,10 @@
 <h3>Risk Maintenance</h3>
 
-<div class="text-center">
-  <a routerLink="/riskMaintenance/add">Add a New Risk</a>
+<div class="align-right">
+  <!--<a routerLink="/controlObjectivesMaintenance/add">Add a New Control Objective</a>-->
+  <app-button label='Add a New Risk' routerLink="/riskMaintenance/add" styleClass='button-action'></app-button>
 </div>
+<br>
 <div>
 
     <p-table #scr [columns]="colHeaders" [value]="sales" [responsive]="true" [paginator]="true" [rows]="8"
@@ -13,6 +15,11 @@
               {{col.header}}
           </th>
       </tr>
+      <tr>
+            <th *ngFor="let col of columns" [ngSwitch]="col.field">
+                <input *ngSwitchCase="'Title'" pInputText type="text" (input)="src.filter($event.target.value, col.brand, col.brand)">
+            </th>
+        </tr>
   </ng-template>
     <ng-template class="text-center" pTemplate="body" let-car>
         <tr>

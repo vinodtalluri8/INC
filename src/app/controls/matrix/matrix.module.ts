@@ -2,17 +2,17 @@ import { SharedModule } from './../../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { GeneralMatrixInfoComponent } from './general-matrix-info/general-matrix-info.component';
+import { GeneralMatrixInfoComponent } from './new-matrix/general-matrix-info/general-matrix-info.component';
 import { MatrixComponent } from './matrix.component';
 import {DropdownModule} from 'primeng/dropdown';
 
-import { MatrixTabComponent } from './matrix-tab/matrix-tab.component';
+import { MatrixTabComponent } from './new-matrix/matrix-tab/matrix-tab.component';
 import {TabMenuModule} from 'primeng/tabmenu';
-import { RiskAssessmentComponent } from './risk-assessment/risk-assessment.component';
-import { BusinessActivityComponent } from './business-activity/business-activity.component';
-import { ControlComponent } from './control/control.component';
-import { ControlEvidenceComponent } from './control-evidence/control-evidence.component';
-import { BusinessProcessComponent } from './business-process/business-process.component';
+import { RiskAssessmentComponent } from './new-matrix/risk-assessment/risk-assessment.component';
+import { BusinessActivityComponent } from './new-matrix/business-activity/business-activity.component';
+import { ControlComponent } from './new-matrix/control/control.component';
+import { ControlEvidenceComponent } from './new-matrix/control-evidence/control-evidence.component';
+import { BusinessProcessComponent } from './new-matrix/business-process/business-process.component';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {ButtonModule} from 'primeng/button';

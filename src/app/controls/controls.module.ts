@@ -29,6 +29,7 @@ import { RouterModule } from "@angular/router";
 import { TableModule } from 'primeng/table';
 import { NewRiskMaintenanceComponent } from './maintenance/risk-maintenance/new-risk-maintenance/new-risk-maintenance.component';
 import { UpdateRiskMaintenanceComponent } from './maintenance/risk-maintenance/update-risk-maintenance/update-risk-maintenance.component';
+import { MaintenanceService } from "./maintenance/services/maintenance.service";
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { UpdateRiskMaintenanceComponent } from './maintenance/risk-maintenance/u
     CategoryService,
     NatureOfControlsService,
     ProcessService,
-    AddKeyControlService],
+    AddKeyControlService,
+    MaintenanceService],
 })
 export class ControlsModule { }

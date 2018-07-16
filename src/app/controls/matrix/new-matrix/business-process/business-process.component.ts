@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatrixService } from '../services/matrix.service';
+import { MatrixService } from '../../services/matrix.service';
 import { Router } from '@angular/router';
 
 @Component({

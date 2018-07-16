@@ -10,6 +10,14 @@ export class UpdateRiskMaintenanceComponent implements OnInit {
 
   itemsPath: MenuItem[];
   home: MenuItem;
+  selectedProgram;
+  mockDropDownData;
+  BusinessProcess;
+  mockMultiDropDownData;
+  description;
+  changeAditionalProcedure;
+  selectedAditionalProcedure;
+  title;
 
   constructor() {
     this.home = { icon: 'fa fa-home' };

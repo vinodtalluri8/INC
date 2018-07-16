@@ -6,11 +6,15 @@
 <h3>Control Objectives Update</h3>
 <div class="row">
   <label class="control-label">Program</label>
-  <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedProgram = $event' [selectedItem]='selectedProgram'></app-dropdown>
+  <div class="col-5">
+    <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedProgram = $event' [selectedItem]='selectedProgram'></app-dropdown>
+  </div>
 </div>
-<div class="text-center">
-  <a routerLink="/controlObjectivesMaintenance/add">Add a New Control Objective</a>
+<div class="align-right">
+  <!--<a routerLink="/controlObjectivesMaintenance/add">Add a New Control Objective</a>-->
+  <app-button label='Add a New Control Objective' routerLink="/controlObjectivesMaintenance/add" styleClass='button-action'></app-button>
 </div>
+<br>
 <div>
 
     <p-table #scr [columns]="colHeaders" [value]="sales" [responsive]="true" [paginator]="true" [rows]="8"
@@ -21,6 +25,11 @@
               {{col.header}}
           </th>
       </tr>
+        <tr>
+            <th *ngFor="let col of columns" [ngSwitch]="col.field">
+                <input *ngSwitchCase="'Title'" pInputText type="text" (input)="src.filter($event.target.value, col.brand, col.brand)">
+            </th>
+        </tr>
   </ng-template>
     <ng-template pTemplate="body" let-car>
         <tr>

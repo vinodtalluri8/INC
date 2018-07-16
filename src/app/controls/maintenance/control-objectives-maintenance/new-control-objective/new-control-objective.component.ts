@@ -10,6 +10,14 @@ export class NewControlObjectiveComponent implements OnInit {
 
   itemsPath: MenuItem[];
   home: MenuItem;
+  selectedProgram;
+  mockDropDownData;
+  BusinessProcess;
+  mockMultiDropDownData;
+  description;
+  changeAditionalProcedure;
+  selectedAditionalProcedure;
+  title;
 
   constructor() {
     this.home = { icon: 'fa fa-home' };
@@ -21,5 +29,7 @@ export class NewControlObjectiveComponent implements OnInit {
 
   ngOnInit() {
   }
+  resetAll(){
 
+  }
 }

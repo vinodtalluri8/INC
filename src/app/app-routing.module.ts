@@ -1,4 +1,4 @@
-import { ControlEvidenceComponent } from './controls/matrix/control-evidence/control-evidence.component';
+import { ControlEvidenceComponent } from './controls/matrix/new-matrix/control-evidence/control-evidence.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,11 +9,11 @@ import { MaintenanceComponent } from './controls/maintenance/maintenance.compone
 import { MatrixComponent } from './controls/matrix/matrix.component';
 import { ControlsModule } from './controls/controls.module';
 import { AddKeyControlsComponent } from './controls/keycontrols/add-key-controls/add-key-controls.component';
-import { GeneralMatrixInfoComponent } from './controls/matrix/general-matrix-info/general-matrix-info.component';
-import { ControlComponent } from './controls/matrix/control/control.component';
-import { BusinessActivityComponent } from './controls/matrix/business-activity/business-activity.component';
-import { BusinessProcessComponent } from './controls/matrix/business-process/business-process.component';
-import { RiskAssessmentComponent } from './controls/matrix/risk-assessment/risk-assessment.component';
+import { GeneralMatrixInfoComponent } from './controls/matrix/new-matrix/general-matrix-info/general-matrix-info.component';
+import { ControlComponent } from './controls/matrix/new-matrix/control/control.component';
+import { BusinessActivityComponent } from './controls/matrix/new-matrix/business-activity/business-activity.component';
+import { BusinessProcessComponent } from './controls/matrix/new-matrix/business-process/business-process.component';
+import { RiskAssessmentComponent } from './controls/matrix/new-matrix/risk-assessment/risk-assessment.component';
 // tslint:disable-next-line:max-line-length
 import { ControlObjectivesMaintenanceComponent } from './controls/maintenance/control-objectives-maintenance/control-objectives-maintenance.component';
 import { RiskMaintenanceComponent } from './controls/maintenance/risk-maintenance/risk-maintenance.component';
