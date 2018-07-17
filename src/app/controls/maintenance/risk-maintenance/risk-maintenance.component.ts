@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-risk-maintenance',
@@ -14,13 +15,19 @@ export class RiskMaintenanceComponent implements OnInit {
   loading;
   displayRows;
   colHeaders;
+  itemsPath: MenuItem[];
+  home: MenuItem;
   // isPaginator;
-  constructor() { 
+  constructor() {
     this.isPaginator = true;
     this.filterable = true;
     this.exportFileName = 'Checklists Scheduled';
     this.selectedRows = 15;
     this.loading = false;
+    this.home = { icon: 'fa fa-home' };
+    this.itemsPath = [
+      { label: 'Maintenance'},
+      { label: 'Risk maintenance'}];
     this.displayRows = [{ label: '15', value: 15 },
     { label: '20', value: 20 }, { label: '30', value: 30 },
     { label: '50', value: 50 }, { label: '100', value: 100 }];

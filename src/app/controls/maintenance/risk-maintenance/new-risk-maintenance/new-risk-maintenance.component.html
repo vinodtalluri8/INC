@@ -3,7 +3,7 @@
       <app-breadcrumbs [items]='itemsPath'></app-breadcrumbs>
   </div>
 </div>
-<h3>New Risk</h3>
+<h3 class="panel-title">New Risk</h3>
 <div class="row">
         <div>
           <label class="control-label">Risk Category</label>
@@ -24,4 +24,8 @@
 <br>
 <div class="text-center">
   <app-button label="Update" styleClass='button-action'></app-button>
+</div>
+<div class="row addKeyControlButtons">
+  <app-button label='Reset' (click)='resetAll()' styleClass='button-action'></app-button>
+  <app-button label='Cancel' styleClass='button-cancel'></app-button>
 </div>
