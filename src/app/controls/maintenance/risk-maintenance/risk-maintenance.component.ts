@@ -33,7 +33,7 @@ export class RiskMaintenanceComponent implements OnInit {
     { label: '50', value: 50 }, { label: '100', value: 100 }];
 
     this.colHeaders = [
-      { field: 'Title', header: 'Title', width: '70%' },
+      { field: 'brand', header: 'Title', width: '70%' },
       { field: '', header: '', width: '15%' },
       { field: '', header: '', width: '15%' }
     ];
@@ -104,6 +104,15 @@ export class RiskMaintenanceComponent implements OnInit {
             { brand: 'Toshiba', lastYearSale: '75%', thisYearSale: '54%', lastYearProfit: '$21,212', thisYearProfit: '$12,533' }
         ];
   }
-
+  /** To check and enable or disable pagination**/
+  checkAndEnablePage(value: number) {
+    if (this.sales.length > value) {
+      this.isPaginator = true;
+    } else {
+      this.isPaginator = false;
+    }
+    this.selectedRows = value;
+    // console.log(' mesagepage ', this.msgs);
+  }
 }
 

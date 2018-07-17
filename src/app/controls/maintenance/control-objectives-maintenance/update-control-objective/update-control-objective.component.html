@@ -33,7 +33,7 @@
       </div>
       <div class="row paddingDataClass">
         <div class="col-sm-12 col-md-12 col-lg-12">
-         <app-input (inputTextSelected)='this.BusinessProcess=$event' #inputBusinessProcess [value]='BusinessProcess' maxlength="60"></app-input>
+         <app-input (inputTextSelected)='this.title=$event' #inputtitle [value]='title' maxlength="60"></app-input>
         </div>
       </div>
     </div>
@@ -46,7 +46,7 @@
       <div class="row paddingDataClass">
         <div class="col-sm-12 col-md-12 col-lg-12">
           <!--<app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedenhancementProject = $event' [selectedItem]='selectedenhancementProject'></app-dropdown>-->
-          <app-multiselect [dataSource]='mockMultiDropDownData' (selectedMultiSelect)='changeAditionalProcedure($event)' [selectedItems]='selectedAditionalProcedure'></app-multiselect>
+          <app-multiselect [dataSource]='mockMultiDropDownData' (selectedMultiSelect)='changeRiskCategory($event)' [selectedItems]='selectedRiskCategory'></app-multiselect>
         </div>
       </div>
     </div>
@@ -69,7 +69,7 @@
   
 </div>
 <div class="text-center">
-  <app-button label="Update" styleClass='button-action'></app-button>
+  <app-button label="Update" styleClass='button-action' (click)="updateData()" [disabled]='disable()'></app-button>
 </div>
 <br>
 <br>

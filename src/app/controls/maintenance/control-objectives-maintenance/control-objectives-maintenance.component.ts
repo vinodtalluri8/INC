@@ -20,7 +20,7 @@ export class ControlObjectivesMaintenanceComponent implements OnInit {
   home: MenuItem;
   mockDropDownData;
   selectedProgram;
-  // isPaginator;
+  
   constructor(private dropdownService : MaintenanceService) { 
     this.isPaginator = true;
     this.filterable = true;
@@ -38,7 +38,7 @@ export class ControlObjectivesMaintenanceComponent implements OnInit {
     { label: '50', value: 50 }, { label: '100', value: 100 }];
 
     this.colHeaders = [
-      { field: 'Title', header: 'Title', width: '70%' },
+      { field: 'brand', header: 'Title', width: '70%' },
       { field: '', header: '', width: '15%' },
       { field: '', header: '', width: '15%' }
     ];
@@ -114,6 +114,15 @@ export class ControlObjectivesMaintenanceComponent implements OnInit {
         this.mockDropDownData = data;
       }
     );
+    
   }
-
+    checkAndEnablePage(value: number) {
+    if (this.sales.length > value) {
+      this.isPaginator = true;
+    } else {
+      this.isPaginator = false;
+    }
+    this.selectedRows = value;
+    // console.log(' mesagepage ', this.msgs);
+  }
 }

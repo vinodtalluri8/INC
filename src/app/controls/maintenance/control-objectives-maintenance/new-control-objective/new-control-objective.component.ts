@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { MaintenanceService } from "../../services/maintenance.service";
 
 @Component({
   selector: 'app-new-control-objective',
@@ -16,10 +17,11 @@ export class NewControlObjectiveComponent implements OnInit {
   mockMultiDropDownData;
   description;
   changeAditionalProcedure;
-  selectedAditionalProcedure;
+  selectedRiskCategory;
   title;
+  dataJson;
 
-  constructor() {
+  constructor(private dropdownService : MaintenanceService) {
     this.home = { icon: 'fa fa-home' };
 
     this.itemsPath = [{ label: 'Maintenance'},
@@ -28,8 +30,51 @@ export class NewControlObjectiveComponent implements OnInit {
    }
 
   ngOnInit() {
+        this.dropdownService.getDropdownData().subscribe(
+      (data) => {
+        this.mockDropDownData = data;
+      }
+    );
+       this.dropdownService.getMultiDropdownData().subscribe(
+      (data) => {
+        this.mockMultiDropDownData = data;
+      }
+    );
+  }
+
+    changeRiskCategory(event) {
+    if (event === 'none') {
+      this.selectedRiskCategory = [];
+    } else {
+      this.selectedRiskCategory = event;
+    }
+  }
+
+    disable() {
+    if ((!this.selectedProgram || this.selectedProgram.length === 0) || !this.title || (!this.selectedRiskCategory || this.selectedRiskCategory.length === 0)
+      || !this.description ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  saveData(){
+        if (!this.disable()) {
+      this.dataJson = {
+        'title': this.title,
+        'selectedProgram': this.selectedProgram,
+        'selectedRiskCategory': this.selectedRiskCategory,
+        'description': this.description
+      };
+    }
+
+    console.log('dataJson',this.dataJson);
   }
   resetAll(){
-
+    this.selectedProgram = '';
+    this.title = '';
+    this.selectedRiskCategory = [];
+    this.description = '';
   }
 }
