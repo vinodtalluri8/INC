@@ -30,6 +30,10 @@ export class NavbarComponent implements OnInit {
         {
           displayName: 'New Matrix',
           route: 'Matrix'
+        },
+        {
+          displayName: 'Select a Matrix',
+          route: 'selectMatrix'
         }]
     },
     {
@@ -41,6 +45,11 @@ export class NavbarComponent implements OnInit {
     },
      {
       displayName: 'Audit',
+       children: [
+        {
+          displayName: 'Create Program Instance',
+          route: 'createProgramInstance'
+        }]
     },
      {
       displayName: 'Maintenance',

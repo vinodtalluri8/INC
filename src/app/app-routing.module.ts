@@ -21,11 +21,18 @@ import { NewControlObjectiveComponent } from "./controls/maintenance/control-obj
 import { UpdateControlObjectiveComponent } from "./controls/maintenance/control-objectives-maintenance/update-control-objective/update-control-objective.component";
 import { UpdateRiskMaintenanceComponent } from "./controls/maintenance/risk-maintenance/update-risk-maintenance/update-risk-maintenance.component";
 import { NewRiskMaintenanceComponent } from "./controls/maintenance/risk-maintenance/new-risk-maintenance/new-risk-maintenance.component";
+import { SelectMatrixComponent } from "./controls/matrix/new-matrix/select-matrix/select-matrix.component";
+import { CreateProgramInstanceComponent } from "./controls/audit/create-program-instance/create-program-instance.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/keycontrols', pathMatch: 'full' },
   { path: 'keycontrols', component: KeycontrolsComponent },
-  { path: 'audit', component: AuditComponent },
+  { path: 'audit', component: AuditComponent, children: [
+    { path: '', redirectTo: 'createProgramInstance', pathMatch: 'full' },
+  ]
+},
+    { path: 'createProgramInstance', component: CreateProgramInstanceComponent },
+
   { path: 'Matrix', component: MatrixComponent, children: [
     { path: '', redirectTo: 'generalMatrixInformation', pathMatch: 'full' },
     { path: 'generalMatrixInformation', component: GeneralMatrixInfoComponent },
@@ -33,9 +40,11 @@ const routes: Routes = [
     { path: 'businessProcess', component: BusinessProcessComponent },
     { path: 'businessActivity', component: BusinessActivityComponent },
     { path: 'control', component: ControlComponent },
-    { path: 'controlEvidence', component: ControlEvidenceComponent}
+    { path: 'controlEvidence', component: ControlEvidenceComponent},
   ]
 },
+    { path: 'selectMatrix', component: SelectMatrixComponent}
+,
   { path: 'coreProgram', component: CoreProgramsComponent },
   { path: 'keycontrols/addKeyControl', component: AddKeyControlsComponent },
   { path: 'maintainence', component: MaintenanceComponent },

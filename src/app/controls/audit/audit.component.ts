@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-audit',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./audit.component.css']
 })
 export class AuditComponent implements OnInit {
-
-  constructor() { }
+  itemsPath: MenuItem[];
+  constructor() { 
+        this.itemsPath = [
+      { label: 'Audit'},
+      { label: 'Create Program Instance', routerLink: 'createProgramInstance'},
+      ];
+  }
 
   ngOnInit() {
   }

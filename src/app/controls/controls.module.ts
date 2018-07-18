@@ -30,6 +30,7 @@ import { TableModule } from 'primeng/table';
 import { NewRiskMaintenanceComponent } from './maintenance/risk-maintenance/new-risk-maintenance/new-risk-maintenance.component';
 import { UpdateRiskMaintenanceComponent } from './maintenance/risk-maintenance/update-risk-maintenance/update-risk-maintenance.component';
 import { MaintenanceService } from "./maintenance/services/maintenance.service";
+import { CreateProgramInstanceComponent } from './audit/create-program-instance/create-program-instance.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { MaintenanceService } from "./maintenance/services/maintenance.service";
     NewControlObjectiveComponent,
     UpdateControlObjectiveComponent,
     NewRiskMaintenanceComponent,
-    UpdateRiskMaintenanceComponent],
+    UpdateRiskMaintenanceComponent,
+    CreateProgramInstanceComponent],
   providers: [
     DepartmentsService,
     CategoryService,

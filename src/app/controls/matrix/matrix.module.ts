@@ -21,6 +21,7 @@ import { MatrixService } from './services/matrix.service';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DialogModule } from 'primeng/dialog';
 import { NewMatrixComponent } from './new-matrix/new-matrix.component';
+import { SelectMatrixComponent } from './new-matrix/select-matrix/select-matrix.component';
 
 @NgModule({
   imports: [
@@ -39,7 +40,7 @@ DialogModule
      GeneralMatrixInfoComponent,
       MatrixTabComponent, RiskAssessmentComponent,
        BusinessActivityComponent, ControlComponent,
-        ControlEvidenceComponent, BusinessProcessComponent, NewMatrixComponent],
+        ControlEvidenceComponent, BusinessProcessComponent, NewMatrixComponent, SelectMatrixComponent],
   providers: [MatrixService]
 })
 export class MatrixModule { }

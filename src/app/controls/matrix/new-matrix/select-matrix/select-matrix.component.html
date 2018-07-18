@@ -1,0 +1,54 @@
+<h3 class="panel-title">Select a Matrix</h3>
+<div class="row">
+  <div class="col-lg-4 col-md-4 col-xs-4">
+    <div>
+      <div class="row paddingTopClass">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <label class="control-label">Group</label>
+        </div>
+      </div>
+      <div class="row paddingDataClass">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedGroup = $event' [selectedItem]='selectedGroup'></app-dropdown>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="row paddingTopClass">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <label class="required control-label">Matrix Type</label>
+        </div>
+      </div>
+      <div class="row paddingDataClass">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.matrixType = $event' [selectedItem]='matrixType'></app-dropdown>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="row paddingTopClass">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <label class="required control-label">Internal Control</label>
+        </div>
+      </div>
+      <div class="row paddingDataClass">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.internalControl = $event' [selectedItem]='internalControl'></app-dropdown>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+  <!--<app-button (click)='saveKeyControl()' [disable]="disable()" label="View Internal Control Matrix" styleClass='button-action'></app-button>-->
+  <app-button label="View Internal Control Matrix" styleClass='button-action' (click)="saveData()" [disabled]='disable()'></app-button>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="row addKeyControlButtons">
+  <app-button label='Reset' (click)='resetAll()' styleClass='button-action'></app-button>
+  &nbsp;&nbsp;&nbsp;
+  <app-button label='Cancel' styleClass='button-cancel'></app-button>
+</div>
