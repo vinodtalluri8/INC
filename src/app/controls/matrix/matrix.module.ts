@@ -21,7 +21,7 @@ import { MatrixService } from './services/matrix.service';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DialogModule } from 'primeng/dialog';
 import { NewMatrixComponent } from './new-matrix/new-matrix.component';
-import { SelectMatrixComponent } from './new-matrix/select-matrix/select-matrix.component';
+import { SelectMatrixComponent } from './select-matrix/select-matrix.component';
 
 @NgModule({
   imports: [

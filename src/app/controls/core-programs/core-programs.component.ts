@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-core-programs',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoreProgramsComponent implements OnInit {
 
-  constructor() { }
-
+  itemsPath: MenuItem[];
+  constructor() { 
+        this.itemsPath = [
+      { label: 'coreProgram'},
+      { label: 'viewCoreProgram', routerLink: 'viewCoreProgram'},
+      { label: 'editCoreProgram', routerLink: 'editCoreProgram'},
+      { label: 'addCoreProgram', routerLink: 'addCoreProgram'}
+      ];
+  }
   ngOnInit() {
   }
 

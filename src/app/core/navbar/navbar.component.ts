@@ -42,6 +42,19 @@ export class NavbarComponent implements OnInit {
     },
      {
       displayName: 'Core Programs',
+      children: [
+        {
+          displayName: 'View Core Program',
+          route: 'viewCoreProgram'
+        },
+        {
+          displayName: 'Edit Core Program',
+          route: 'editCoreProgram'
+        },
+        {
+          displayName: 'Add Core Program',
+          route: 'addCoreProgram'
+        }]
     },
      {
       displayName: 'Audit',
@@ -49,6 +62,18 @@ export class NavbarComponent implements OnInit {
         {
           displayName: 'Create Program Instance',
           route: 'createProgramInstance'
+        },
+        {
+          displayName: 'Edit Program Instance',
+          route: 'editProgramInstance'
+        },
+        {
+          displayName: 'Create Internal Audit',
+          route: 'createInternalAudit'
+        },
+        {
+          displayName: 'Edit Internal Audit',
+          route: 'editInternalAudit'
         }]
     },
      {

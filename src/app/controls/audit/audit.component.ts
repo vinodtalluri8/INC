@@ -12,6 +12,9 @@ export class AuditComponent implements OnInit {
         this.itemsPath = [
       { label: 'Audit'},
       { label: 'Create Program Instance', routerLink: 'createProgramInstance'},
+      { label: 'Edit Program Instance', routerLink: 'editProgramInstance'},
+      { label: 'Create Internal Audit', routerLink: 'createInternalAudit'},
+      { label: 'Edit Internal Audit', routerLink: 'editInternalAudit'},
       ];
   }
 

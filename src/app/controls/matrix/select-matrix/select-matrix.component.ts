@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MaintenanceService } from "../../../maintenance/services/maintenance.service";
+import { MaintenanceService } from "../../maintenance/services/maintenance.service";
 
 @Component({
   selector: 'app-select-matrix',

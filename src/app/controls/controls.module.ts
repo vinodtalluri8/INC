@@ -31,6 +31,12 @@ import { NewRiskMaintenanceComponent } from './maintenance/risk-maintenance/new-
 import { UpdateRiskMaintenanceComponent } from './maintenance/risk-maintenance/update-risk-maintenance/update-risk-maintenance.component';
 import { MaintenanceService } from "./maintenance/services/maintenance.service";
 import { CreateProgramInstanceComponent } from './audit/create-program-instance/create-program-instance.component';
+import { EditProgramInstanceComponent } from './audit/edit-program-instance/edit-program-instance.component';
+import { CreateInternalAuditComponent } from './audit/create-internal-audit/create-internal-audit.component';
+import { EditInternalAuditComponent } from './audit/edit-internal-audit/edit-internal-audit.component';
+import { ViewCoreProgramComponent } from './core-programs/view-core-program/view-core-program.component';
+import { EditCoreProgramComponent } from './core-programs/edit-core-program/edit-core-program.component';
+import { AddCoreProgramComponent } from './core-programs/add-core-program/add-core-program.component';
 
 
 @NgModule({
@@ -56,7 +62,13 @@ import { CreateProgramInstanceComponent } from './audit/create-program-instance/
     UpdateControlObjectiveComponent,
     NewRiskMaintenanceComponent,
     UpdateRiskMaintenanceComponent,
-    CreateProgramInstanceComponent],
+    CreateProgramInstanceComponent,
+    EditProgramInstanceComponent,
+    CreateInternalAuditComponent,
+    EditInternalAuditComponent,
+    ViewCoreProgramComponent,
+    EditCoreProgramComponent,
+    AddCoreProgramComponent],
   providers: [
     DepartmentsService,
     CategoryService,

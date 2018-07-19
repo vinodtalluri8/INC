@@ -1,0 +1,36 @@
+<h3 class="panel-title">View Core Program</h3>
+<div class="row">
+  <label class="control-label">Program</label>
+  <div class="col-5">
+    <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedProgram = $event' [selectedItem]='selectedProgram'></app-dropdown>
+  </div>
+</div>
+<br>
+<div>
+
+    <p-table #scr [columns]="colHeaders" [value]="sales" [responsive]="true" [paginator]="true" [rows]="selectedRows"
+        [alwaysShowPaginator]="false" [exportFilename]="this.exportFileName" [loading]="loading" [resizableColumns]="true">
+      <ng-template pTemplate="header" let-columns>
+      <tr>
+          <th class="text-center" *ngFor="let col of columns" [style.width]="col.width" [pSortableColumn]="col.field" pResizableColumn>
+              {{col.header}}
+          </th>
+      </tr>
+  </ng-template>
+    <ng-template pTemplate="body" let-car>
+        <tr>
+            <td class="text-center">{{car.brand}}</td>
+            <td class="text-center">{{car.brand}}</td>
+            <td class="text-center">{{car.brand}}</td>
+            <td class="text-center">{{car.brand}}</td>
+            <td class="text-center">{{car.brand}}</td>
+        </tr>
+    </ng-template>
+      <ng-template pTemplate="paginatorright" let-state>
+          <app-dropdown [datasource]='displayRows' (selectedItemChange)='checkAndEnablePage($event)' [selectedItem]='selectedRows'></app-dropdown>
+      </ng-template>
+    </p-table>
+</div>
+<div *ngIf="!isPaginator">
+  <app-dropdown [datasource]='displayRows' (selectedItemChange)='checkAndEnablePage($event)' [selectedItem]='selectedRows'></app-dropdown>
+</div>
