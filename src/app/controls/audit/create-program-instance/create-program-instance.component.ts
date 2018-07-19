@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MaintenanceService } from "../../maintenance/services/maintenance.service";
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-create-program-instance',
@@ -14,8 +15,15 @@ export class CreateProgramInstanceComponent implements OnInit {
     programEndDate;
     externalAuditor;
   dataJson;
+  itemsPath: MenuItem[];
+  home: MenuItem;
 
-  constructor(private dropdownService: MaintenanceService) { }
+  constructor(private dropdownService: MaintenanceService) { 
+    this.home = { icon: 'fa fa-home' };
+
+    this.itemsPath = [{ label: 'Audit'},
+    { label: 'Create Program Instance'}];
+  }
 
   ngOnInit() {
     this.dropdownService.getDropdownData().subscribe(
