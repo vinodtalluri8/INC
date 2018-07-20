@@ -15,12 +15,25 @@ export class ControlEvidenceComponent implements OnInit {
   trackingNumber;
   controlEvidence;
   dataJson;
+  implemented;
 
   constructor(private fb: FormBuilder, private matrixService: MatrixService, private router: Router) {
    }
 
   ngOnInit() {
+    this.implemented = false;
     this.preloadData();
+  }
+  checkRadio(value){
+    console.log('radio value',value);
+    if(value == 'implemented'){
+      this.implemented = true;
+    }
+    else{
+      this.implemented = false;
+      this.selectedEnhancementProject = 'defaultdata';
+      this.trackingNumber = 'defaultdata';
+    }
   }
   preloadData() {
     this.matrixService.getMatrixData().subscribe(

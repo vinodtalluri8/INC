@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatrixService } from '../../services/matrix.service';
 import { Router } from '@angular/router';
 
@@ -16,13 +15,26 @@ export class BusinessActivityComponent implements OnInit {
   subActivity;
   selectedenhancementProject;
   trackingNumber;
+  implemented;
   dataJson;
 
-  constructor(private fb: FormBuilder, private matrixService: MatrixService, private router: Router) {
+  constructor(private matrixService: MatrixService, private router: Router) {
    }
 
   ngOnInit() {
+    this.implemented = false;
     this.preloadData();
+  }
+  checkRadio(value){
+    console.log('radio value',value);
+    if(value == 'implemented'){
+      this.implemented = true;
+    }
+    else{
+      this.implemented = false;
+      this.selectedenhancementProject = 'defaultdata';
+      this.trackingNumber = 'defaultdata';
+    }
   }
   preloadData() {
     this.matrixService.getMatrixData().subscribe(

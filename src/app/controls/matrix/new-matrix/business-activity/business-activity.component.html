@@ -47,8 +47,8 @@
       <div class="row paddingDataClass">
         <div class="col-sm-12 col-md-12 col-lg-12">
 
-          <p-radioButton formControlName="implementationState" name="group1" value="Implemented" label="Implemented"></p-radioButton>
-          <p-radioButton formControlName="implementationState" name="group1" value="Will be Implemented" label="Will be Implemented"></p-radioButton>
+          <p-radioButton name="group1" value="Implemented" label="Implemented" (click)="checkRadio('implemented')"></p-radioButton>
+          <p-radioButton name="group1" value="Will be Implemented" label="Will be Implemented" (click)="checkRadio('implement')"></p-radioButton>
 
         </div>
       </div>
@@ -56,7 +56,7 @@
 
   </div>
   <div class="col-lg-4 col-md-4 col-xs-4">
-    <div>
+    <div *ngIf="implemented">
       <div class="row paddingTopClass">
         <div class="col-sm-12 col-md-12 col-lg-12">
           <label class="required control-label">Enhancement Project</label>
@@ -68,7 +68,7 @@
         </div>
       </div>
     </div>
-    <div>
+    <div *ngIf="implemented">
       <div class="row paddingTopClass">
         <div class="col-sm-12 col-md-12 col-lg-12">
           <label class="required control-label">Tracking Number</label>
