@@ -28,6 +28,8 @@ export class ControlEvidenceComponent implements OnInit {
     console.log('radio value',value);
     if(value == 'implemented'){
       this.implemented = true;
+      this.selectedEnhancementProject = '';
+      this.trackingNumber = '';
     }
     else{
       this.implemented = false;
