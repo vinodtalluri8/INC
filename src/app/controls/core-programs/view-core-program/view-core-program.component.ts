@@ -31,8 +31,8 @@ export class ViewCoreProgramComponent implements OnInit {
     this.home = { icon: 'fa fa-home' };
 
     this.itemsPath = [
-      { label: 'Maintenance'},
-      { label: 'Control Objectives Maintenance' }];
+      { label: 'Core Programs'},
+      { label: 'View Core Program' }];
 
     this.displayRows = [{ label: '15', value: 15 },
     { label: '20', value: 20 }, { label: '30', value: 30 },

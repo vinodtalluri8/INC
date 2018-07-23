@@ -26,18 +26,6 @@
     </div>
   </div>
   <div class="col-lg-4 col-md-4 col-xs-4">
-    <div *ngIf="implemented">
-      <div class="row paddingTopClass">
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <label class="required control-label">Tracking Number</label>
-        </div>
-      </div>
-      <div class="row paddingDataClass">
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <app-input (inputTextSelected)='this.trackingNumber = $event' #inputtrackingNumber [value]='trackingNumber' maxlength="60"></app-input>
-        </div>
-      </div>
-    </div>
     <div>
       <div class="row paddingTopClass">
         <div class="col-sm-12 col-md-12 col-lg-12">
@@ -51,7 +39,18 @@
         </div>
       </div>
     </div>
-
+    <div *ngIf="implemented">
+      <div class="row paddingTopClass">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <label class="required control-label">Tracking Number</label>
+        </div>
+      </div>
+      <div class="row paddingDataClass">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <app-input (inputTextSelected)='this.trackingNumber = $event' #inputtrackingNumber [value]='trackingNumber' maxlength="60"></app-input>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="col-lg-4 col-md-4 col-xs-4">
     <div>

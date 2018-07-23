@@ -18,8 +18,7 @@ label.required:after {
 }
 
 .panel-title {
-    color: #7e2d40;
-    padding-left: 6px;
+    padding-left: 40px;
 }
 
 app-button {

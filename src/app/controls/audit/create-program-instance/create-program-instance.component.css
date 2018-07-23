@@ -12,3 +12,14 @@
     padding-top: 10px;
     bottom: 0;
 }
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444444;
+    font-style: normal;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
