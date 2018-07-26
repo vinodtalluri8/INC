@@ -9,7 +9,7 @@ import { MenuItem } from 'primeng/api';
 export class CoreProgramsComponent implements OnInit {
 
   itemsPath: MenuItem[];
-  constructor() { 
+  constructor() {
         this.itemsPath = [
       { label: 'coreProgram'},
       { label: 'viewCoreProgram', routerLink: 'viewCoreProgram'},

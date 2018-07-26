@@ -1,9 +1,9 @@
-<div class="row">
-  <div class="col-sm-12 col-md-12 col-lg-12 padding-left-10">
-    <app-breadcrumbs [items]='itemsPath'></app-breadcrumbs>
+<div class="panel panel-default" style="margin-left:-3px">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 padding-left-10">
+      <app-breadcrumbs [items]='itemsPath'></app-breadcrumbs>
+    </div>
   </div>
-</div>
-<div class="panel panel-default">
   <div class="panel-heading section-padding">
     <h3 class="panel-title" style="font-size: 24px">New Risk</h3>
   </div>
@@ -14,7 +14,6 @@
       </div>
       <div class="col-5">
         <app-input (inputTextSelected)='this.riskCategory=$event' #inputriskCategory [value]='riskCategory' maxlength="60"></app-input>
-        <!--<app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedProgram = $event' [selectedItem]='selectedProgram'></app-dropdown>-->
       </div>
     </div>
     <br>

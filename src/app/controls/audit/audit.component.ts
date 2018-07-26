@@ -8,7 +8,7 @@ import { MenuItem } from 'primeng/api';
 })
 export class AuditComponent implements OnInit {
   itemsPath: MenuItem[];
-  constructor() { 
+  constructor() {
         this.itemsPath = [
       { label: 'Audit'},
       { label: 'Create Program Instance', routerLink: 'createProgramInstance'},

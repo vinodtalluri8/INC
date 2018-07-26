@@ -25,11 +25,11 @@ import { ControlObjectivesMaintenanceComponent } from './maintenance/control-obj
 import { RiskMaintenanceComponent } from './maintenance/risk-maintenance/risk-maintenance.component';
 import { NewControlObjectiveComponent } from './maintenance/control-objectives-maintenance/new-control-objective/new-control-objective.component';
 import { UpdateControlObjectiveComponent } from './maintenance/control-objectives-maintenance/update-control-objective/update-control-objective.component';
-import { RouterModule } from "@angular/router";
+import { RouterModule } from '@angular/router';
 import { TableModule } from 'primeng/table';
 import { NewRiskMaintenanceComponent } from './maintenance/risk-maintenance/new-risk-maintenance/new-risk-maintenance.component';
 import { UpdateRiskMaintenanceComponent } from './maintenance/risk-maintenance/update-risk-maintenance/update-risk-maintenance.component';
-import { MaintenanceService } from "./maintenance/services/maintenance.service";
+import { MaintenanceService } from './maintenance/services/maintenance.service';
 import { CreateProgramInstanceComponent } from './audit/create-program-instance/create-program-instance.component';
 import { EditProgramInstanceComponent } from './audit/edit-program-instance/edit-program-instance.component';
 import { CreateInternalAuditComponent } from './audit/create-internal-audit/create-internal-audit.component';

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MaintenanceService } from "../../maintenance/services/maintenance.service";
+import { MaintenanceService } from '../../maintenance/services/maintenance.service';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -39,7 +39,7 @@ export class SelectMatrixComponent implements OnInit {
     }
   }
 
-  saveData(){
+  saveData() {
         if (!this.disable()) {
       this.dataJson = {
         'group': this.selectedGroup,
@@ -48,9 +48,9 @@ export class SelectMatrixComponent implements OnInit {
       };
     }
 
-    console.log('dataJson',this.dataJson);
+    console.log('dataJson', this.dataJson);
   }
-  resetAll(){
+  resetAll() {
     this.selectedGroup = '';
     this.matrixType = '';
     this.internalControl = '';

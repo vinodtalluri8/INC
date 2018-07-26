@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { MaintenanceService } from "../../services/maintenance.service";
+import { MaintenanceService } from '../../services/maintenance.service';
 
 @Component({
   selector: 'app-new-control-objective',
@@ -21,11 +21,11 @@ export class NewControlObjectiveComponent implements OnInit {
   title;
   dataJson;
 
-  constructor(private dropdownService : MaintenanceService) {
+  constructor(private dropdownService: MaintenanceService) {
     this.home = { icon: 'fa fa-home' };
 
     this.itemsPath = [{ label: 'Maintenance'},
-    { label: 'Control Objectives Maintenance',routerLink: ['/controlObjectivesMaintenance'] },
+    { label: 'Control Objectives Maintenance', routerLink: ['/controlObjectivesMaintenance'] },
     { label: 'New Control Objective'}];
    }
 
@@ -59,7 +59,7 @@ export class NewControlObjectiveComponent implements OnInit {
     }
   }
 
-  saveData(){
+  saveData() {
         if (!this.disable()) {
       this.dataJson = {
         'title': this.title,
@@ -69,9 +69,9 @@ export class NewControlObjectiveComponent implements OnInit {
       };
     }
 
-    console.log('dataJson',this.dataJson);
+    console.log('dataJson', this.dataJson);
   }
-  resetAll(){
+  resetAll() {
     this.selectedProgram = '';
     this.title = '';
     this.selectedRiskCategory = [];

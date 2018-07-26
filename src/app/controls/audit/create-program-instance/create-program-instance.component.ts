@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MaintenanceService } from "../../maintenance/services/maintenance.service";
+import { MaintenanceService } from '../../maintenance/services/maintenance.service';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -18,7 +18,7 @@ export class CreateProgramInstanceComponent implements OnInit {
   itemsPath: MenuItem[];
   home: MenuItem;
 
-  constructor(private dropdownService: MaintenanceService) { 
+  constructor(private dropdownService: MaintenanceService) {
     this.home = { icon: 'fa fa-home' };
 
     this.itemsPath = [{ label: 'Audit'},
@@ -41,7 +41,7 @@ export class CreateProgramInstanceComponent implements OnInit {
     }
   }
 
-  saveData(){
+  saveData() {
         if (!this.disable()) {
       this.dataJson = {
         'program': this.selectedProgram,
@@ -51,9 +51,9 @@ export class CreateProgramInstanceComponent implements OnInit {
       };
     }
 
-    console.log('dataJson',this.dataJson);
+    console.log('dataJson', this.dataJson);
   }
-  resetAll(){
+  resetAll() {
     this.selectedProgram = '';
     this.programStartDate = new Date();
     this.programEndDate = new Date();

@@ -13,8 +13,7 @@ export class MatrixComponent implements OnInit {
     this.home = { icon: 'fa fa-home' };
     this.itemsPath = [
       { label: 'Matrix'},
-      { label: 'New Matrix', routerLink: 'generalMatrixInformation'},
-      { label: 'Select a Matrix', routerLink: 'selectMatrix'}];
+      { label: 'New Matrix', routerLink: 'generalMatrixInformation'}];
 
     this.items = [
       {label: 'General Matrix Information', routerLink: 'generalMatrixInformation'},

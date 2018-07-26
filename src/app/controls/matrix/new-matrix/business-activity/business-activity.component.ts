@@ -25,12 +25,11 @@ export class BusinessActivityComponent implements OnInit {
     this.implemented = false;
     this.preloadData();
   }
-  checkRadio(value){
-    console.log('radio value',value);
-    if(value == 'implemented'){
+  checkRadio(value) {
+    console.log('radio value', value);
+    if (value === 'implemented') {
       this.implemented = true;
-    }
-    else{
+    } else {
       this.implemented = false;
       this.selectedenhancementProject = 'defaultdata';
       this.trackingNumber = 'defaultdata';

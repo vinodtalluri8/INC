@@ -35,14 +35,13 @@ export class ControlComponent implements OnInit {
     this.implemented = false;
     this.preloadData();
   }
-  checkRadio(value){
-    console.log('radio value',value);
-    if(value == 'implemented'){
+  checkRadio(value) {
+    console.log('radio value', value);
+    if (value === 'implemented') {
       this.implemented = true;
        this.selectedEnhancementProject = '';
       this.trackingNumber = '';
-    }
-    else{
+    } else {
       this.implemented = false;
       this.selectedEnhancementProject = 'defaultdata';
       this.trackingNumber = 'defaultdata';

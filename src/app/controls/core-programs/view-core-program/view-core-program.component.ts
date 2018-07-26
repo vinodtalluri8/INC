@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { MaintenanceService } from "../../maintenance/services/maintenance.service";
+import { MaintenanceService } from '../../maintenance/services/maintenance.service';
 
 
 @Component({
@@ -22,7 +22,7 @@ export class ViewCoreProgramComponent implements OnInit {
   mockDropDownData;
   selectedProgram;
 
-    constructor(private dropdownService : MaintenanceService) { 
+    constructor(private dropdownService: MaintenanceService) {
     this.isPaginator = true;
     this.filterable = true;
     this.exportFileName = 'Checklists Scheduled';
@@ -117,7 +117,7 @@ export class ViewCoreProgramComponent implements OnInit {
         this.mockDropDownData = data;
       }
     );
-    
+
   }
     checkAndEnablePage(value: number) {
     if (this.sales.length > value) {

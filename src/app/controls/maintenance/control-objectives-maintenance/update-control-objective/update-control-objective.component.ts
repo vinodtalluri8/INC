@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { MaintenanceService } from "../../services/maintenance.service";
+import { MaintenanceService } from '../../services/maintenance.service';
 
 @Component({
   selector: 'app-update-control-objective',
@@ -20,7 +20,7 @@ export class UpdateControlObjectiveComponent implements OnInit {
   dataJson;
 
 
-  constructor(private dropdownService : MaintenanceService) {
+  constructor(private dropdownService: MaintenanceService) {
     this.home = { icon: 'fa fa-home' };
     this.itemsPath = [{ label: 'Maintenance'},
     { label: 'Control Objectives Maintenance', routerLink: ['/controlObjectivesMaintenance'] },
@@ -58,7 +58,7 @@ export class UpdateControlObjectiveComponent implements OnInit {
     }
   }
 
-  updateData(){
+  updateData() {
         if (!this.disable()) {
       this.dataJson = {
         'title': this.title,
@@ -67,10 +67,10 @@ export class UpdateControlObjectiveComponent implements OnInit {
         'description': this.description
       };
     }
-    console.log('dataJson',this.dataJson);
+    console.log('dataJson', this.dataJson);
   }
 
-  resetAll(){
+  resetAll() {
     this.selectedProgram = '';
     this.title = '';
     this.selectedRiskCategory = [];

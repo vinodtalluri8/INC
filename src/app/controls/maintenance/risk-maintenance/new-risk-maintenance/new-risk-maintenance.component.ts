@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { MaintenanceService } from "../../services/maintenance.service";
+import { MaintenanceService } from '../../services/maintenance.service';
 
 @Component({
   selector: 'app-new-risk-maintenance',
@@ -16,7 +16,7 @@ export class NewRiskMaintenanceComponent implements OnInit {
   typeOfRisk;
   riskCategory;
 
-  constructor(private dropdownService : MaintenanceService) {
+  constructor(private dropdownService: MaintenanceService) {
     this.home = { icon: 'fa fa-home' };
     this.itemsPath = [{ label: 'Risk Maintenance', routerLink: ['/riskMaintenance']},
     { label: 'New Risk'}];
@@ -38,7 +38,7 @@ export class NewRiskMaintenanceComponent implements OnInit {
     }
   }
 
-  saveData(){
+  saveData() {
         if (!this.disable()) {
       this.dataJson = {
         'riskCategory': this.riskCategory,
@@ -46,9 +46,9 @@ export class NewRiskMaintenanceComponent implements OnInit {
       };
     }
 
-    console.log('dataJson',this.dataJson);
+    console.log('dataJson', this.dataJson);
   }
-  resetAll(){
+  resetAll() {
     this.typeOfRisk = '';
     this.riskCategory = '';
   }

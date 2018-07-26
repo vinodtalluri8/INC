@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MaintenanceService } from "../../maintenance/services/maintenance.service";
+import { MaintenanceService } from '../../maintenance/services/maintenance.service';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -16,7 +16,7 @@ export class CreateInternalAuditComponent implements OnInit {
   itemsPath: MenuItem[];
   home: MenuItem;
 
-  constructor(private dropdownService : MaintenanceService) {
+  constructor(private dropdownService: MaintenanceService) {
     this.home = { icon: 'fa fa-home' };
     this.itemsPath = [{ label: 'Audit'},
     { label: 'Create Internal Audit'}];
@@ -29,7 +29,7 @@ export class CreateInternalAuditComponent implements OnInit {
       }
     );
   }
-  
+
   disable() {
     if ((!this.department || this.department.length === 0) || !this.auditName || !this.reportClosedDate ) {
       return true;
@@ -38,7 +38,7 @@ export class CreateInternalAuditComponent implements OnInit {
     }
   }
 
-  saveData(){
+  saveData() {
         if (!this.disable()) {
       this.dataJson = {
         'auditName': this.auditName,
@@ -47,9 +47,9 @@ export class CreateInternalAuditComponent implements OnInit {
       };
     }
 
-    console.log('dataJson',this.dataJson);
+    console.log('dataJson', this.dataJson);
   }
-  resetAll(){
+  resetAll() {
     this.auditName = '';
     this.department = '';
     this.reportClosedDate = new Date();
