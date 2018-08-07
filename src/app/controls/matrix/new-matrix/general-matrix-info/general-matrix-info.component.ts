@@ -22,11 +22,30 @@ export class GeneralMatrixInfoComponent implements OnInit {
   selectedControlRiskRating;
   dataJson;
   certificateResponseJson;
+  matrixTypeDropdown;
+  relatedTechnology;
 
   constructor(private fb: FormBuilder, private matrixService: MatrixService, private router: Router) {
   }
   ngOnInit() {
+    this.matrixTypeDropdown = [{  
+      "label":"Operational",
+      "value":{  
+         "id":1,
+         "name":"Operational",
+         "code":"Operational"
+      }
+   },
+   {  
+      "label":"System",
+      "value":{  
+         "id":2,
+         "name":"System",
+         "code":"System"
+      }
+   }];
     this.preloadData();
+    this.relatedTechnology = false;
   }
   preloadData() {
     this.matrixService.getMatrixData().subscribe(
@@ -39,6 +58,14 @@ export class GeneralMatrixInfoComponent implements OnInit {
         this.mockMultiDropDownData = data;
       }
     );
+  }
+
+  modelChanged(){
+    console.log('model changed',this.selectedmatrixType.name);
+    if(this.selectedmatrixType.name == 'System')
+      this.relatedTechnology = true;
+    else
+      this.relatedTechnology = false;
   }
   displayModel() {
     this.display = true;
